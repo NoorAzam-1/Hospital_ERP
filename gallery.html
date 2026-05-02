@@ -1,0 +1,580 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ITdose | Our Work &amp; Product Showcase</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#dfe3e7",
+              primary: "#a83900",
+              "on-tertiary-fixed": "#131b2e",
+              "surface-dim": "#d6dade",
+              "secondary-container": "#dfe0e0",
+              "on-tertiary-container": "#293145",
+              "on-secondary-fixed": "#1a1c1c",
+              "on-secondary-fixed-variant": "#454747",
+              "primary-fixed": "#ffdbcf",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#bec6e0",
+              "secondary-fixed-dim": "#c6c6c7",
+              secondary: "#5d5f5f",
+              outline: "#8d7167",
+              "surface-container": "#eaeef2",
+              "surface-container-low": "#f0f4f8",
+              "on-primary-fixed": "#380d00",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#dae2fd",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "inverse-surface": "#2c3134",
+              "surface-container-high": "#e4e9ed",
+              "inverse-primary": "#ffb59a",
+              "on-surface": "#171c1f",
+              "on-secondary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-background": "#171c1f",
+              "primary-container": "#ff6b2c",
+              "surface-bright": "#f6fafe",
+              "surface-container-highest": "#dfe3e7",
+              "on-primary-fixed-variant": "#802900",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#9199b1",
+              "on-primary": "#ffffff",
+              error: "#ba1a1a",
+              "primary-fixed-dim": "#ffb59a",
+              "outline-variant": "#e2bfb3",
+              surface: "#f6fafe",
+              "inverse-on-surface": "#edf1f5",
+              tertiary: "#565e74",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#5c1c00",
+              background: "#f6fafe",
+              "on-surface-variant": "#594139",
+              "on-secondary-container": "#616363",
+              "surface-tint": "#a83900",
+              "secondary-fixed": "#e2e2e2",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "4px",
+              xl: "2.5rem",
+              lg: "1.5rem",
+              "container-margin": "2rem",
+              sm: "0.5rem",
+              xs: "0.25rem",
+              md: "1rem",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              h2: ["Inter"],
+              "data-tabular": ["Inter"],
+              "body-md": ["Inter"],
+              "label-caps": ["Inter"],
+              h1: ["Inter"],
+              "body-sm": ["Inter"],
+              h3: ["Inter"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              h2: [
+                "30px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "data-tabular": ["14px", { lineHeight: "1", fontWeight: "500" }],
+              "body-md": [
+                "16px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              h1: [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": [
+                "14px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h3: [
+                "24px",
+                { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+              ],
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface">
+    <!-- TopNavBar -->
+    <header
+      class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm sticky top-0 z-50"
+    >
+      <nav
+        class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl shadow-sm h-20"
+      >
+        <div
+          class="flex justify-between items-center h-full px-8 max-w-screen-2xl mx-auto"
+        >
+          <!-- Logo -->
+          <a
+            href="/"
+            class="text-2xl font-black tracking-tighter text-slate-900"
+            >ITdose</a
+          >
+
+          <!-- Nav -->
+          <div class="hidden md:flex gap-8 items-center relative">
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="modules.html"
+              >Modules</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="features.html"
+              >Features</a
+            >
+
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button
+                class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              >
+                Services ▾
+              </button>
+
+              <div
+                class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-48"
+              >
+                <a
+                  href="services.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >All Services</a
+                >
+                <a href="country.html" class="block px-4 py-2 hover:bg-gray-100"
+                  >Country Services</a
+                >
+                <a
+                  href="popupform.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Book Demo Form</a
+                >
+              </div>
+            </div>
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="pricing.html"
+              >Pricing</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="resources.html"
+              >Resources</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="about-us.html"
+              >About</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="blogPage.html"
+              >Blog</a
+            >
+
+            <a
+              class="text-sm font-medium text-orange-600 hover:text-orange-500"
+              href="gallery.html"
+              >Gallery</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="contact-us.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="relative py-24 px-6 overflow-hidden">
+        <div
+          class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-primary-fixed/30 to-transparent opacity-50 blur-3xl"
+        ></div>
+        <div class="max-w-7xl mx-auto text-center">
+          <h1 class="font-h1 text-h1 text-on-surface mb-6">
+            Our Work &amp; Product Showcase
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-tertiary max-w-2xl mx-auto mb-12"
+          >
+            Explore our ERP interface and healthcare solutions. Witness the
+            synergy of high-performance software and intuitive design tailored
+            for modern medical institutions.
+          </p>
+          <!-- Filters -->
+          <div class="flex flex-wrap justify-center gap-3 mb-16">
+            <button
+              class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-medium shadow-md transition-all hover:brightness-110"
+            >
+              All
+            </button>
+            <button
+              class="px-6 py-2 rounded-full bg-white border border-outline-variant text-tertiary font-medium transition-all hover:bg-surface-container-low hover:border-primary-container"
+            >
+              Dashboard
+            </button>
+            <button
+              class="px-6 py-2 rounded-full bg-white border border-outline-variant text-tertiary font-medium transition-all hover:bg-surface-container-low hover:border-primary-container"
+            >
+              Hospital
+            </button>
+            <button
+              class="px-6 py-2 rounded-full bg-white border border-outline-variant text-tertiary font-medium transition-all hover:bg-surface-container-low hover:border-primary-container"
+            >
+              UI Screens
+            </button>
+            <button
+              class="px-6 py-2 rounded-full bg-white border border-outline-variant text-tertiary font-medium transition-all hover:bg-surface-container-low hover:border-primary-container"
+            >
+              Team
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Gallery Grid -->
+      <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        >
+          <!-- Gallery Item 1 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="ERP Dashboard"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A sophisticated healthcare ERP dashboard interface displayed on a sleek high-resolution monitor. The screen features vibrant orange accents and clean data visualizations including line charts and patient metrics. The lighting is bright and professional, suggesting a modern hospital management office setting with a soft depth-of-field background. The overall aesthetic is clean, corporate, and highly efficient."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA7PwK11j3MD74-PgEkmAwppORDv1fTz9RaO8n3HxWNaP13iwSP4_yj9y-McRRl4j9krLMPKXooRJQcgMeakMW7Cve4j-1RPd9M92L9W7OPrFNKKT_QLwHxUp5cRqzAKwsn8tYo2IW7X5qJ1arlHxQOGlNSPOqFBM-8GzHnqTv_T0jz6Q3sNYe0sRSv6dxmvFQz65AaF3tUSyWjwHgjSQI8viTokxkq88RHxNbCxk1uam59GiDIVdBXaPDwzKcBpe2Gdnxjqg2Jik"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Central Dashboard</span
+                >
+                <span class="text-white/80 text-sm">UI Screen Design</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 2 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Hospital Environment"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A wide-angle shot of a bright, contemporary hospital reception area with minimalist architecture. The space is illuminated by natural light and features clean white walls with subtle orange branding elements. Staff members are seen in the distance using modern computer terminals. The atmosphere is calm, clean, and technologically advanced, echoing the premium SaaS design language."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAioP-y8gy9e7FNuQSErvr2bBaW1G7i6WpnO26k6OGWeM-L5akjwi860MUZ1_Z40v2c_OcKDWQ-BJGlGa2IxYhM6OqEhn32X18gODBjvIb9PeY9ZeqdHiGsCR_qPKq6XgzKKQ0tegytzwAG-zBCPJIdy1wkiDSuIHnkbS-hdcPIBYYdxBZ_ZvrQRNSV4c16NlK_VPPc9yCmpEKAFB22Jm5phTVu-XVnnMR_X4l1RvKuqz1uy9CybAWaCi53iPKT_iU4VG9GSlutLUY"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Main Reception</span
+                >
+                <span class="text-white/80 text-sm">Hospital Environment</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Medical Team"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A professional team of diverse medical doctors and specialists standing together in a high-tech hospital corridor. They are wearing white coats and carrying tablets showing medical data. The lighting is soft and high-key, creating an atmosphere of institutional trust and vitality. The background is slightly blurred to emphasize the collaborative and expert nature of the medical staff."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_5MuP-ajY2P3kOikhcvpNSNP_Xk20rmsnbSZtgdCi93HCYb0_C7RL9u1CkHaFwSVMTUvosczdFMzdEq1Z4hiOaZ7EDx8iUlNYPYNx5JTbCPhZehoG2buLHV8Qbo6LxUxL5dzLoiRuxEXqsotklb5FNfYh3No5VHzrpE27MijDp7WEIVuwwUHvXMVc0qKoa9r1KRjlxNWU3EQKILaTfGGCixZqTwBCGJemK-MOXVjJw7p-CZnH27rbQQT7r1AaOvUfXh94EVylTQY"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Specialist Team</span
+                >
+                <span class="text-white/80 text-sm">Healthcare Staff</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Inventory Management"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A detailed view of a modern pharmacy inventory system within a large hospital. The image shows organized shelves and a digital tablet being used to track supplies. The lighting is crisp and cool, highlighting the efficiency of the ITdose ERP system in managing medical logistics. Subtle orange accents on the tablet interface match the brand's primary color palette."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG671lEHgE4zAu4m4r4QLR8ZA-9dHNLrNQ6JKwfftpZt_X8RWRuC3pYSmO7mIdS4Brmp-7YhpNBzC79nPoT_Gx-rzGz0KrqNDdCtanmekOuBew28g5v22CQzrGdRKYXVawFYcGuE7G4MCQeIvVUxriPzFqTrsn7izwBSKnJxYzyVThRJ8Lc1j-d87twy4f2oDX9u2aLlviiQJBy2bCbyyMdkXAEk71jTO_xsNmwTBxTNre9g_u67gJPrhp-7jhBcGhkAIDZ-URmrA"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Inventory Flow</span
+                >
+                <span class="text-white/80 text-sm">Module Detail</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 5 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Patient Monitoring"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A clean, close-up shot of a patient monitoring system in a modern hospital ward. The digital display shows live vitals and sparkline gradients in energetic orange. The room is softly lit with a serene, professional mood. High-legibility typography on the screen emphasizes the clinical reliability of the software while maintaining a cutting-edge SaaS aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQutqfhzprjXbCNECRdSoP-ZaeCxB37RCXVVx9iBZ5RbrfDVnIQBOBo46rzCJ5ZzkIxfWKB_IWl8y8AmA74vHla94fY06hs-jHib5W14xJVkfEz9ouQqQtO6WGUoeW0yWWgaqFwA8rtCYo-ZpvctlB5UBAdwy6hYkWd4RsYjgrnCkTzoLY6uh15AoFS0F0eLD79kIEcyphiHBIqn21q7TTboG2KCbDMG4nCZAQhJaYql2MAL8kiFH2hAjvIWAFsfCIIMJrN24kbdE"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Vital Analytics</span
+                >
+                <span class="text-white/80 text-sm">UI Screens</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 6 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Laboratory Management"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A wide shot of a futuristic medical laboratory with advanced diagnostics equipment. Technicians in sterile scrubs are interacting with touchscreen terminals that display the ITdose software. The environment is pristine, with high-key lighting and a palette of whites and soft greys, punctuated by clinical orange UI elements. The scene conveys reliability and high-end software performance."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg_NrCk14ERtoazJxY0wXL_Uw8mNdQCpCiPIBvQytFHr76ft4S8B0DGPa0x8MNf6U3n_CE89lV5dOoKmxDtIDnG_9MGvKeeauW_6Myii7ytbePmQkH4MKzJiDJES1W-HUazheKFKwODNq2rRS9skGNC82I6OV0HW_8tKAS2j3Z7PrnI2KOrO53twTY0gOd4iXYRIShJCsO75YagAKkGYeWvSkgKWaIEskUcNB5oA3YsqxMbfk4rogb1bP9mK9SWvpB9EWlzhazSbM"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Lab Diagnostics</span
+                >
+                <span class="text-white/80 text-sm">Software Interface</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 7 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Operating Theater"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="An advanced operating theater equipped with the latest surgical robotics and digital imaging screens. The screens run the ITdose ERP modules for real-time surgical data tracking. The room is bathed in cool, surgical lighting with intense focus points. The mood is highly professional and high-stakes, demonstrating the software's capability in critical healthcare environments."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbp6ZJk_pru1-gdFoGWe77M-LOPH8OsowFqcUKueg29N3D8zuCZcb_wyA95HRA8_ocr4uCU6x9M8SximPL5EUUC0mX_x5DoYseHMFjxDytNMwuEl4t3_Y6JE7cN1m7Ei6_UcBZsO9sU2Ig64-reacxd1drUkw0VcbvgYoUh3OGoQIrMbVFUQDWWXmDS1v3eBN-l7WZcgYccdv0F8dT_HlR2XbE5AQ0z8F9TlpWZ1Cwik3WzlXdprCklMCjyr--jgYaKG_qVq7_ndE"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Digital Surgery</span
+                >
+                <span class="text-white/80 text-sm">High-End Solutions</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 8 -->
+          <div class="group relative gallery-item cursor-pointer">
+            <div
+              class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg shadow-on-tertiary-container/5 transition-all duration-500 group-hover:shadow-2xl"
+            >
+              <img
+                alt="Data Security"
+                class="w-full h-full object-cover transition-transform duration-700"
+                data-alt="A conceptual image of secure data servers and digital locks, representing the backend strength of the hospital ERP. The visual style uses dark glassmorphism effects with glowing orange data streams. The lighting is cinematic and tech-focused, illustrating the robust security architecture that protects sensitive patient information. The overall feel is futuristic and institutional."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnPlL0y6K8B0GZ5TeIAgwIf7VLzUD6bkvoP3muP_nwurjF21Z1sWOau-BzknANPfSbKyXmQfGqR0Is0Pcp53sR7Oo_qTODRPtSoHkj7Ot8zFnQ71-nCdZ-vfG7xECzxPbP2o7tJDHfTryVK800VUIM1xlIEGG5TiR0R55Ge6uHAm0UgXWZGoNd7G0SOJOi6enUxUJ_muO79kU-yxQvmF9Y3BWKLtbV1fnushuMWXvFdEGeYWPmAAJJlhrkWrmkIA_CqNE7NCqgusE"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-white font-semibold text-lg"
+                  >Secure Core</span
+                >
+                <span class="text-white/80 text-sm">Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="max-w-7xl mx-auto px-6 mb-24">
+        <div
+          class="relative rounded-3xl overflow-hidden bg-slate-900 py-16 px-8 text-center shadow-2xl"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"
+          >
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container rounded-full blur-[120px]"
+            ></div>
+          </div>
+          <div class="relative z-10">
+            <h2 class="font-h2 text-h2 text-white mb-4">
+              Want to see it live?
+            </h2>
+            <p class="text-slate-400 mb-8 max-w-md mx-auto">
+              Experience the full power of ITdose ERP with a personalized
+              walkthrough of our modules and features.
+            </p>
+            <button
+              class="bg-primary-container hover:brightness-110 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all active:scale-95 shadow-xl shadow-primary-container/20"
+            >
+              Book Demo
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Logo -->
+        <div>
+          <div class="text-xl font-bold text-white mb-6">ITdose</div>
+          <p class="text-sm mb-6">
+            Leading provider of intelligent hospital management systems.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blogPage.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="bloginsight.html">Blog Insights</a></li>
+            <li><a href="country.html">Country</a></li>
+            <li><a href="popupform.html">Demo Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 text-xs">© 2024 ITdose Hospital ERP</div>
+    </footer>
+    <!-- Suggestion for Lightbox Popup (Hidden Placeholder) -->
+    <div
+      class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+      id="lightbox-suggested"
+    >
+      <div class="relative max-w-5xl w-full">
+        <img
+          alt="Zoomed view"
+          class="w-full h-auto rounded-lg shadow-2xl"
+          src=""
+        />
+        <button
+          class="absolute -top-12 right-0 text-white hover:text-primary-container"
+        >
+          <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
