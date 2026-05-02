@@ -1,0 +1,689 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#e4e9ed",
+              "on-background": "#171c1f",
+              "surface-variant": "#dfe3e7",
+              error: "#ba1a1a",
+              "secondary-container": "#dfe0e0",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed-variant": "#454747",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "inverse-on-surface": "#edf1f5",
+              "surface-dim": "#d6dade",
+              "on-secondary-fixed": "#1a1c1c",
+              secondary: "#5d5f5f",
+              "secondary-fixed-dim": "#c6c6c7",
+              primary: "#a83900",
+              "surface-container": "#eaeef2",
+              "surface-tint": "#a83900",
+              "on-primary-fixed": "#380d00",
+              outline: "#8d7167",
+              "on-surface-variant": "#594139",
+              "surface-container-low": "#f0f4f8",
+              "on-primary": "#ffffff",
+              "on-surface": "#171c1f",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#9199b1",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#e2e2e2",
+              "inverse-primary": "#ffb59a",
+              tertiary: "#565e74",
+              "on-tertiary-fixed": "#131b2e",
+              "on-primary-fixed-variant": "#802900",
+              "on-primary-container": "#5c1c00",
+              "primary-fixed-dim": "#ffb59a",
+              "primary-container": "#ff6b2c",
+              "inverse-surface": "#2c3134",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#616363",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#bec6e0",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#293145",
+              "tertiary-fixed": "#dae2fd",
+              surface: "#f6fafe",
+              "primary-fixed": "#ffdbcf",
+              "surface-bright": "#f6fafe",
+              "outline-variant": "#e2bfb3",
+              "surface-container-highest": "#dfe3e7",
+              background: "#f6fafe",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "container-margin": "2rem",
+              lg: "1.5rem",
+              sm: "0.5rem",
+              md: "1rem",
+              base: "4px",
+              xs: "0.25rem",
+              gutter: "1.5rem",
+              xl: "2.5rem",
+            },
+            fontFamily: {
+              "data-tabular": ["Inter"],
+              "body-sm": ["Inter"],
+              h2: ["Inter"],
+              h1: ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              h3: ["Inter"],
+              "label-caps": ["Inter"],
+            },
+            fontSize: {
+              "data-tabular": ["14px", { lineHeight: "1", fontWeight: "500" }],
+              "body-sm": [
+                "14px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h2: [
+                "30px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              h1: [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "16px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h3: [
+                "24px",
+                { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+              ],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(23, 28, 31, 0.05);
+      }
+      .orange-gradient-btn {
+        background: linear-gradient(135deg, #ff6b2c 0%, #a83900 100%);
+        transition: transform 0.15s ease;
+      }
+      .orange-gradient-btn:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-white/20 shadow-sm"
+    >
+      <nav
+        class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl shadow-sm h-20"
+      >
+        <div
+          class="flex justify-between items-center h-full px-8 max-w-screen-2xl mx-auto"
+        >
+          <!-- Logo -->
+          <a
+            href="/"
+            class="text-2xl font-black tracking-tighter text-slate-900"
+            >ITdose</a
+          >
+
+          <!-- Nav -->
+          <div class="hidden md:flex gap-8 items-center relative">
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="modules.html"
+              >Modules</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="features.html"
+              >Features</a
+            >
+
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button
+                class="text-sm font-medium text-orange-600 hover:text-orange-500"
+              >
+                Services ▾
+              </button>
+
+              <div
+                class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-48"
+              >
+                <a
+                  href="services.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >All Services</a
+                >
+                <a href="country.html" class="block px-4 py-2 hover:bg-gray-100"
+                  >Country Services</a
+                >
+                <a
+                  href="popupform.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Book Demo Form</a
+                >
+              </div>
+            </div>
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="pricing.html"
+              >Pricing</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="resources.html"
+              >Resources</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="about-us.html"
+              >About</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="blogPage.html"
+              >Blog</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="gallery.html"
+              >Gallery</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="contact-us.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <div
+          class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-container rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-tertiary-container rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4"
+        ></div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
+        <div>
+          <span
+            class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block"
+            >Deployment Excellence</span
+          >
+          <h1 class="font-h1 text-h1 text-on-background mb-6 leading-tight">
+            Seamless Hospital ERP Implementation
+          </h1>
+          <p class="font-body-lg text-body-lg text-secondary mb-10 max-w-xl">
+            Transform your healthcare institution with ITdose. We bridge the gap
+            between complex software and clinical daily life through a
+            structured, risk-free implementation methodology.
+          </p>
+          <div class="flex space-x-4">
+            <button
+              class="orange-gradient-btn text-white px-8 py-4 rounded-xl font-h3 text-body-md shadow-xl flex items-center"
+            >
+              Start Implementation
+              <span class="material-symbols-outlined ml-2">arrow_forward</span>
+            </button>
+            <button
+              class="bg-white border-2 border-surface-variant text-on-background px-8 py-4 rounded-xl font-h3 text-body-md hover:bg-surface-container transition-all"
+            >
+              View Roadmap
+            </button>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl glass-card p-4">
+            <img
+              alt="ERP Implementation Team"
+              class="w-full h-auto rounded-2xl object-cover"
+              data-alt="A professional medical setting where a team of healthcare administrators and IT specialists are collaborating in a bright, modern control room. They are interacting with high-tech dashboard displays showing hospital performance metrics. The lighting is crisp and natural, emphasizing a high-key light mode aesthetic. The color palette is dominated by clean whites, soft greys, and energetic orange accents, reflecting a sense of advanced medical technology and organized professional efficiency."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBONUisKPl7N4gOOciQd9pSxSqXyb3rwtHEzlFR1XTMSDrvHRxTcQoGWQCmGFGL5UwzOUohyoevlmV8WDnZlrEk_x5P5PgDBf6HMhIGFH8bPmkn72OtetL1Oku9OHGoYA-8k6pGyknUtm86JhPyj4fk--gshMBn4jKr95eYLTB2OMsbh2h3aVOS19bfg5bsgyicK6T2iJO6MTVAWWBKyf_ovoliySOSMl9zhjpPzN6jXeGe6bYatCCWpnPOA4JR2-5WsCjFK97YXqg"
+            />
+          </div>
+          <!-- Floating Info Card -->
+          <div
+            class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl max-w-xs shadow-xl"
+          >
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white"
+              >
+                <span class="material-symbols-outlined" data-weight="fill"
+                  >verified</span
+                >
+              </div>
+              <div>
+                <p class="font-label-caps text-label-caps text-secondary mb-1">
+                  Success Rate
+                </p>
+                <p class="font-h3 text-h3 text-on-background">99.8%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Explanation (Bento Grid) -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-16">
+          <h2 class="font-h2 text-h2 text-on-background mb-4">
+            A Holistic Approach to ERP
+          </h2>
+          <p class="font-body-md text-body-md text-secondary max-w-2xl mx-auto">
+            Implementation isn't just about installation. It's about cultural
+            integration and operational optimization.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Large Feature -->
+          <div
+            class="md:col-span-2 glass-card p-10 rounded-3xl flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >settings_suggest</span
+                >
+              </div>
+              <h3 class="font-h3 text-h3 text-on-background mb-4">
+                Full-Cycle Optimization
+              </h3>
+              <p class="font-body-md text-body-md text-secondary mb-8">
+                Our team analyzes your current clinical workflows to configure
+                ITdose for maximum efficiency. We don't just mimic your old
+                processes; we improve them for the digital age.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-white/50 p-4 rounded-xl border border-surface-variant/50"
+              >
+                <span class="material-symbols-outlined text-primary mb-2"
+                  >database</span
+                >
+                <p class="font-body-sm text-on-background font-semibold">
+                  Legacy Data Migration
+                </p>
+              </div>
+              <div
+                class="bg-white/50 p-4 rounded-xl border border-surface-variant/50"
+              >
+                <span class="material-symbols-outlined text-primary mb-2"
+                  >integration_instructions</span
+                >
+                <p class="font-body-sm text-on-background font-semibold">
+                  LIMS &amp; RIS Integration
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Secondary Feature -->
+          <div
+            class="bg-primary-container p-10 rounded-3xl text-white flex flex-col"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-6"
+            >
+              <span class="material-symbols-outlined text-3xl text-white"
+                >groups</span
+              >
+            </div>
+            <h3 class="font-h3 text-h3 mb-4">Hands-on Training</h3>
+            <p class="font-body-md text-body-md text-white/90 mb-8">
+              Ensuring every nurse, doctor, and administrator is confident in
+              using the platform through specialized on-site workshops.
+            </p>
+            <div class="mt-auto">
+              <img
+                alt="Training Session"
+                class="w-full h-40 object-cover rounded-xl shadow-lg"
+                data-alt="A diverse group of healthcare professionals in scrubs and white coats attending an interactive training session in a brightly lit medical office. They are gathered around a large tablet display, looking engaged and smiling while an instructor points to a digital health record. The environment is clean and sophisticated with a modern clinical aesthetic, utilizing a palette of light blues and warm orange tones."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXl2iUBa_SFp4Jqxx1MX7E5g9Ozuhqw5A7hJYZDyERRVMNn3gvxjuHSWzWsyq_4RUe5HmPKYEhsniT07fv5Y0vbCCSnLd9EqytDO6N3B2Vtvtp9Ps6I2SfuKEqNQGUc9dywqtHiH_ZHw84y1147p60LYHZF_MfNiur_0_gvMNj4EaC_6GyUmhEjqdFlBF67d9QYZcU-9tiM5momrxlJjPTu75fcgvApaFoYz7m7W6fjPMENYj4Ub9S-PgzUDMvqSuWMnbbAZGQuLE"
+              />
+            </div>
+          </div>
+          <!-- Three Small Grid Items -->
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4"
+              >shield_person</span
+            >
+            <h4 class="font-h3 text-body-lg text-on-background mb-2">
+              Compliance Ready
+            </h4>
+            <p class="font-body-sm text-secondary">
+              Pre-configured for regional healthcare regulations and data
+              privacy standards.
+            </p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4"
+              >monitoring</span
+            >
+            <h4 class="font-h3 text-body-lg text-on-background mb-2">
+              Uptime Monitoring
+            </h4>
+            <p class="font-body-sm text-secondary">
+              Continuous health checks during the critical go-live period to
+              ensure zero downtime.
+            </p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4"
+              >cloud_sync</span
+            >
+            <h4 class="font-h3 text-body-lg text-on-background mb-2">
+              Cloud Deployment
+            </h4>
+            <p class="font-body-sm text-secondary">
+              Scalable architecture hosted on secure, high-performance global
+              cloud infrastructure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Implementation Steps -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div class="lg:col-span-4 sticky top-32">
+            <span
+              class="font-label-caps text-label-caps text-primary mb-4 block"
+              >The Journey</span
+            >
+            <h2 class="font-h2 text-h2 text-on-background mb-6">
+              Our 5-Phase Implementation Strategy
+            </h2>
+            <p class="font-body-md text-body-md text-secondary mb-8">
+              We follow a rigorous protocol to ensure your transition to Adidose
+              is smooth, predictable, and successful.
+            </p>
+            <div class="space-y-4">
+              <div
+                class="flex items-center space-x-3 text-on-background font-semibold"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span>Dedicated Project Manager</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 text-on-background font-semibold"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span>24/7 Priority Support</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-8 space-y-12">
+            <!-- Step 1 -->
+            <div class="flex space-x-8 group">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center font-h3 text-primary group-hover:bg-primary-container group-hover:text-white transition-all"
+                >
+                  1
+                </div>
+                <div class="flex-1 w-px bg-surface-variant my-4"></div>
+              </div>
+              <div class="pb-12">
+                <h3 class="font-h3 text-h3 text-on-background mb-2">
+                  Requirement Analysis
+                </h3>
+                <p class="font-body-md text-secondary">
+                  In-depth discovery of departmental workflows, legacy systems,
+                  and clinical pain points to create a tailored blueprint.
+                </p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex space-x-8 group">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center font-h3 text-primary group-hover:bg-primary-container group-hover:text-white transition-all"
+                >
+                  2
+                </div>
+                <div class="flex-1 w-px bg-surface-variant my-4"></div>
+              </div>
+              <div class="pb-12">
+                <h3 class="font-h3 text-h3 text-on-background mb-2">
+                  Configuration &amp; Customization
+                </h3>
+                <p class="font-body-md text-secondary">
+                  Mapping medical processes to ITdose modules and developing
+                  custom reports or integrations as specified in the blueprint.
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex space-x-8 group">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center font-h3 text-primary group-hover:bg-primary-container group-hover:text-white transition-all"
+                >
+                  3
+                </div>
+                <div class="flex-1 w-px bg-surface-variant my-4"></div>
+              </div>
+              <div class="pb-12">
+                <h3 class="font-h3 text-h3 text-on-background mb-2">
+                  User Acceptance Testing (UAT)
+                </h3>
+                <p class="font-body-md text-secondary">
+                  Rigorous testing cycles with key clinical staff to ensure the
+                  system meets all operational requirements and performance
+                  metrics.
+                </p>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="flex space-x-8 group">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center font-h3 text-primary group-hover:bg-primary-container group-hover:text-white transition-all"
+                >
+                  4
+                </div>
+                <div class="flex-1 w-px bg-surface-variant my-4"></div>
+              </div>
+              <div class="pb-12">
+                <h3 class="font-h3 text-h3 text-on-background mb-2">
+                  Go-Live &amp; Transition
+                </h3>
+                <p class="font-body-md text-secondary">
+                  The critical switch-over period supported by our on-site
+                  "Command Center" team for immediate troubleshooting and
+                  guidance.
+                </p>
+              </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="flex space-x-8 group">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center font-h3 text-primary group-hover:bg-primary-container group-hover:text-white transition-all"
+                >
+                  5
+                </div>
+              </div>
+              <div>
+                <h3 class="font-h3 text-h3 text-on-background mb-2">
+                  Post-Implementation Audit
+                </h3>
+                <p class="font-body-md text-secondary">
+                  Analyzing outcomes, gathering feedback, and providing
+                  continuous optimization to ensure long-term ROI and staff
+                  satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-8">
+        <div
+          class="relative bg-slate-900 rounded-[3rem] overflow-hidden p-16 text-center"
+        >
+          <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <img
+              alt="Hospital Efficiency"
+              class="w-full h-full object-cover"
+              data-alt="A vast, high-speed blurred image of a modern hospital corridor with architectural lines of light and glass. The scene is shot with a motion-blur effect to suggest speed, efficiency, and progress. The color palette features deep navy blues, obsidian blacks, and sharp streaks of vibrant orange and white light, creating a high-end technological and corporate feel."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuABkWbEIMucJoGMEm2YdZ9IUcdBMwKX-uWdItpn7HOty6_FnF7rGYAsvlbVAxPzsqJ9yiW0cHoiihLkopWCf65t_GMLkrCPQSazceZSvGFDjSrD-T-JQMH-yOEDgJ7kGFkdsrfTsFtXacasRxzfyjXkhuxmmpEMPyIvc4VK_CexunGdkb2SBHvEjv6Z1UTim_KOTNiyp1rBFVP9X8U2pkI2yLgFWx7BYHbTB_SO9_bQGCWKDPLrV5PD7gQ0xWQGHB7f28sjHq1KsvA"
+            />
+          </div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="font-h1 text-h1 text-white mb-6">
+              Ready to Modernize Your Hospital?
+            </h2>
+            <p class="font-body-lg text-body-lg text-slate-300 mb-10">
+              Schedule a free consultation with our implementation experts and
+              discover how ITdose can transform your operations.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
+            >
+              <button
+                class="orange-gradient-btn text-white px-10 py-5 rounded-2xl font-h3 text-body-lg shadow-2xl w-full sm:w-auto"
+              >
+                Request a Proposal
+              </button>
+              <button
+                class="text-white font-body-md flex items-center hover:text-orange-400 transition-colors"
+              >
+                Contact Implementation Team
+                <span class="material-symbols-outlined ml-2">open_in_new</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Logo -->
+        <div>
+          <div class="text-xl font-bold text-white mb-6">ITdose</div>
+          <p class="text-sm mb-6">
+            Leading provider of intelligent hospital management systems.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blogPage.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="bloginsight.html">Blog Insights</a></li>
+            <li><a href="country.html">Country</a></li>
+            <li><a href="popupform.html">Demo Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 text-xs">© 2024 ITdose Hospital ERP</div>
+    </footer>
+  </body>
+</html>
