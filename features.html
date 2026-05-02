@@ -1,0 +1,576 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "outline-variant": "#e2bfb3",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#dae2fd",
+              "on-secondary-container": "#616363",
+              "on-primary-container": "#5c1c00",
+              tertiary: "#565e74",
+              "on-primary-fixed-variant": "#802900",
+              "surface-container-highest": "#dfe3e7",
+              background: "#f6fafe",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#131b2e",
+              error: "#ba1a1a",
+              "surface-container": "#eaeef2",
+              "inverse-surface": "#2c3134",
+              "primary-fixed-dim": "#ffb59a",
+              "surface-variant": "#dfe3e7",
+              "surface-container-high": "#e4e9ed",
+              "on-surface-variant": "#594139",
+              "on-surface": "#171c1f",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-bright": "#f6fafe",
+              "tertiary-container": "#9199b1",
+              "surface-tint": "#a83900",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#171c1f",
+              "secondary-container": "#dfe0e0",
+              "surface-dim": "#d6dade",
+              primary: "#a83900",
+              "on-secondary-fixed": "#1a1c1c",
+              "surface-container-low": "#f0f4f8",
+              secondary: "#5d5f5f",
+              outline: "#8d7167",
+              "on-secondary-fixed-variant": "#454747",
+              "primary-container": "#ff6b2c",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#380d00",
+              "on-tertiary-container": "#293145",
+              "secondary-fixed-dim": "#c6c6c7",
+              "inverse-on-surface": "#edf1f5",
+              "secondary-fixed": "#e2e2e2",
+              "tertiary-fixed-dim": "#bec6e0",
+              "inverse-primary": "#ffb59a",
+              "primary-fixed": "#ffdbcf",
+              surface: "#f6fafe",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "0.5rem",
+              "container-margin": "2rem",
+              xs: "0.25rem",
+              md: "1rem",
+              lg: "1.5rem",
+              gutter: "1.5rem",
+              base: "4px",
+              xl: "2.5rem",
+            },
+            fontFamily: {
+              h3: ["Inter"],
+              "data-tabular": ["Inter"],
+              "body-lg": ["Inter"],
+              h2: ["Inter"],
+              h1: ["Inter"],
+              "body-sm": ["Inter"],
+              "label-caps": ["Inter"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              h3: [
+                "24px",
+                { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+              ],
+              "data-tabular": ["14px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h2: [
+                "30px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              h1: [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": [
+                "14px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              "body-md": [
+                "16px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 10px 30px -10px rgba(168, 57, 0, 0.1);
+      }
+      .orange-gradient-btn {
+        background: linear-gradient(135deg, #a83900 0%, #ff6b2c 100%);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <nav
+      class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl shadow-sm h-20"
+    >
+      <div
+        class="flex justify-between items-center h-full px-8 max-w-screen-2xl mx-auto"
+      >
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-black tracking-tighter text-slate-900"
+          >ITdose</a
+        >
+
+        <!-- Nav -->
+        <div class="hidden md:flex gap-8 items-center relative">
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="modules.html"
+            >Modules</a
+          >
+
+          <a
+            class="text-sm font-medium text-orange-600 hover:text-orange-500"
+            href="features.html"
+            >Features</a
+          >
+
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            >
+              Services ▾
+            </button>
+
+            <div
+              class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-48"
+            >
+              <a href="services.html" class="block px-4 py-2 hover:bg-gray-100"
+                >All Services</a
+              >
+              <a href="country.html" class="block px-4 py-2 hover:bg-gray-100"
+                >Country Services</a
+              >
+              <a href="popupform.html" class="block px-4 py-2 hover:bg-gray-100"
+                >Book Demo Form</a
+              >
+            </div>
+          </div>
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="pricing.html"
+            >Pricing</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="resources.html"
+            >Resources</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="about-us.html"
+            >About</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="blogPage.html"
+            >Blog</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="gallery.html"
+            >Gallery</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="contact-us.html"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+      <header class="text-center max-w-3xl mx-auto mb-24">
+        <span
+          class="font-label-caps text-primary tracking-widest uppercase mb-4 block"
+          >Powering Modern Healthcare</span
+        >
+        <h1 class="font-h1 text-on-surface mb-6">
+          Uncompromising performance for medical institutions.
+        </h1>
+        <p class="font-body-lg text-secondary mb-10">
+          Adidose Hospital ERP is built to handle the complexities of modern
+          medical workflows, ensuring patient-centric care through automated
+          efficiency and deep clinical insights.
+        </p>
+      </header>
+      <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-32">
+        <div class="md:col-span-7 rounded-xl overflow-hidden glass-card p-1">
+          <img
+            alt="Real-time Analytics Dashboard"
+            class="w-full h-96 object-cover rounded-lg"
+            data-alt="A sophisticated dashboard interface for hospital analytics shown on a large modern monitor. The screen displays vibrant orange and blue charts, patient census data, and real-time performance metrics in a clean, glassmorphic layout. The environment is a professional, high-end medical administrative office with soft lighting and minimalist furniture, conveying a sense of organized efficiency and technological advancement."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCojhPo7KuakHJLN5LAj7wkOFYktI_PxmxrN2HDbXGPbbnDeFS_FDJ-UnzoFEPWXYTgw5WJOXg5t-aP_W6Yu7MgQo5NnmEBrl-B9kOT_PJOth6vsqQtcD_UKeHCNprBu8Le7XS3mfekTR_ct0_a8D5azUj_XWhnpv0UvhWyNAD5_Zfhb9lie8HXRVYbyjqLh_VRnvnAuQp7DiR8D9VHbXTynvWC_Kh7aO-k3Wu4XiHhWWSitIIhZA9CTpPFPvH0jbNTP3qxsjkkUds"
+          />
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center space-y-6 px-4">
+          <div
+            class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >monitoring</span
+            >
+          </div>
+          <h2 class="font-h2 text-on-surface">Real-time Analytics</h2>
+          <p class="font-body-md text-secondary">
+            Make informed decisions with instant access to hospital-wide
+            performance metrics. From bed occupancy rates to surgery success
+            intervals, monitor every vital sign of your organization in one
+            unified view.
+          </p>
+          <ul class="space-y-3">
+            <li
+              class="flex items-center gap-3 text-body-sm text-on-surface-variant font-medium"
+            >
+              <span class="material-symbols-outlined text-primary text-lg"
+                >check_circle</span
+              >
+              Live resource utilization tracking
+            </li>
+            <li
+              class="flex items-center gap-3 text-body-sm text-on-surface-variant font-medium"
+            >
+              <span class="material-symbols-outlined text-primary text-lg"
+                >check_circle</span
+              >
+              Predictive patient flow modeling
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+        <div class="glass-card p-8 rounded-xl flex flex-col space-y-6">
+          <div
+            class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary"
+          >
+            <span
+              class="material-symbols-outlined text-3xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >verified_user</span
+            >
+          </div>
+          <h3 class="font-h3 text-on-surface">HIPAA Compliance</h3>
+          <p class="font-body-sm text-secondary leading-relaxed">
+            Security is not an option; it's our foundation. Our platform ensures
+            256-bit encryption for all patient data, meeting the highest global
+            standards for healthcare data protection and privacy.
+          </p>
+          <a
+            class="inline-flex items-center text-sm font-bold text-primary hover:gap-2 transition-all"
+            href="#"
+          >
+            Learn about Security
+            <span class="material-symbols-outlined text-base ml-1"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+        <div class="glass-card p-8 rounded-xl flex flex-col space-y-6">
+          <div
+            class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary"
+          >
+            <span
+              class="material-symbols-outlined text-3xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >analytics</span
+            >
+          </div>
+          <h3 class="font-h3 text-on-surface">Smart Reporting</h3>
+          <p class="font-body-sm text-secondary leading-relaxed">
+            Automate complex clinical and administrative reports. Our AI-driven
+            engine compiles data across departments to generate actionable
+            insights in seconds instead of days.
+          </p>
+          <a
+            class="inline-flex items-center text-sm font-bold text-primary hover:gap-2 transition-all"
+            href="#"
+          >
+            Explore Reporting
+            <span class="material-symbols-outlined text-base ml-1"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+        <div class="glass-card p-8 rounded-xl flex flex-col space-y-6">
+          <div
+            class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary"
+          >
+            <span
+              class="material-symbols-outlined text-3xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >speed</span
+            >
+          </div>
+          <h3 class="font-h3 text-on-surface">Scalability</h3>
+          <p class="font-body-sm text-secondary leading-relaxed">
+            From local clinics to multi-state hospital chains. Adidose scales
+            horizontally with your growth, supporting thousands of concurrent
+            users without a drop in performance.
+          </p>
+          <a
+            class="inline-flex items-center text-sm font-bold text-primary hover:gap-2 transition-all"
+            href="#"
+          >
+            System Architecture
+            <span class="material-symbols-outlined text-base ml-1"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+      </section>
+      <section
+        class="bg-inverse-surface rounded-[2rem] overflow-hidden p-12 md:p-20 relative"
+      >
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent opacity-50"
+        ></div>
+        <div
+          class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        >
+          <div>
+            <h2 class="font-h1 text-white mb-6">
+              Patient-First <br />Pharmacy Automation
+            </h2>
+            <p class="text-surface-variant font-body-lg mb-8">
+              Reduce prescription errors by 94% with our automated medication
+              management module. Fully integrated with clinical records and
+              billing for a seamless pharmacy experience.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div
+                class="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-lg flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary-fixed-dim"
+                  >inventory_2</span
+                >
+                <span class="text-white text-sm font-medium"
+                  >Smart Stock Alerts</span
+                >
+              </div>
+              <div
+                class="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-lg flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary-fixed-dim"
+                  >barcode_scanner</span
+                >
+                <span class="text-white text-sm font-medium"
+                  >Barcode Verification</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl rotate-2">
+            <img
+              alt="Pharmacy Automation"
+              class="w-full h-80 object-cover rounded-xl"
+              data-alt="A modern pharmacy robot or automated dispensing machine in a bright, clean hospital pharmacy setting. The lighting is crisp and sterile yet welcoming. The aesthetic features white surfaces and warm orange accents that align with the corporate brand colors. In the background, a pharmacist is using a sleek tablet device to manage inventory, emphasizing the connection between high-tech software and physical healthcare hardware."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUYE4q1D6lyYANrp-ISrvakW5yN0zTG5RPzYXiLXJrFrDRxD5JNn_ofjH41_eSRw-4emuMBM43_ubpRGys0lUiNWuIw4blo8RYVScPtBg-16MN1KfJvVKutH939QCfha0mK7QSV9aN0QJjK9qC3i46brmTV8CQ-7oK1ZHJiL5uSI8YiX6ftc-tYZ2bWAryF1BlhYdO8O8dPV_6wXN1WErdhBa4vbjaBEXEODLuwbm0RFk86m90GdJecFyXNrhP6ZSVxYg_a6wBlo"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="py-24">
+        <div class="text-center mb-16">
+          <h2 class="font-h2 text-on-surface mb-4">
+            The Complete Healthcare Ecosystem
+          </h2>
+          <p class="text-secondary font-body-md max-w-2xl mx-auto">
+            One platform, endless possibilities. Discover the modular
+            capabilities designed for every department.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div
+            class="p-6 rounded-xl border border-slate-200 hover:border-primary/50 transition-colors group"
+          >
+            <span
+              class="material-symbols-outlined text-primary mb-4 block text-3xl group-hover:scale-110 transition-transform"
+              >biotech</span
+            >
+            <h4 class="font-h3 text-lg mb-2">LIS Management</h4>
+            <p class="text-body-sm text-secondary">
+              Complete Laboratory Information System with machine interfacing.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-xl border border-slate-200 hover:border-primary/50 transition-colors group"
+          >
+            <span
+              class="material-symbols-outlined text-primary mb-4 block text-3xl group-hover:scale-110 transition-transform"
+              >radiology</span
+            >
+            <h4 class="font-h3 text-lg mb-2">RIS &amp; PACS</h4>
+            <p class="text-body-sm text-secondary">
+              Radiology management with DICOM integration for diagnostic
+              precision.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-xl border border-slate-200 hover:border-primary/50 transition-colors group"
+          >
+            <span
+              class="material-symbols-outlined text-primary mb-4 block text-3xl group-hover:scale-110 transition-transform"
+              >account_balance_wallet</span
+            >
+            <h4 class="font-h3 text-lg mb-2">Revenue Cycle</h4>
+            <p class="text-body-sm text-secondary">
+              End-to-end billing, insurance claims, and financial reporting.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-xl border border-slate-200 hover:border-primary/50 transition-colors group"
+          >
+            <span
+              class="material-symbols-outlined text-primary mb-4 block text-3xl group-hover:scale-110 transition-transform"
+              >medication</span
+            >
+            <h4 class="font-h3 text-lg mb-2">E-Prescription</h4>
+            <p class="text-body-sm text-secondary">
+              Paperless doctor notes and digital prescription workflows.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="mb-32 text-center bg-slate-50 dark:bg-slate-900 rounded-[3rem] py-20 px-6 border border-slate-200/50"
+      >
+        <h2 class="font-h2 text-on-surface mb-6">
+          Ready to modernize your institution?
+        </h2>
+        <p class="text-secondary font-body-lg mb-10 max-w-xl mx-auto">
+          Join 500+ leading hospitals that rely on Adidose for their daily
+          operations and patient care.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="orange-gradient-btn px-10 py-4 text-white font-bold rounded-2xl shadow-xl hover:shadow-orange-200 transition-all active:scale-95"
+          >
+            Get Started Today
+          </button>
+          <button
+            class="bg-white border-2 border-slate-200 text-slate-800 px-10 py-4 font-bold rounded-2xl hover:border-primary transition-all active:scale-95"
+          >
+            View Case Studies
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-slate-950 text-slate-400 py-12 px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Logo -->
+        <div>
+          <div class="text-xl font-bold text-white mb-6">ITdose</div>
+          <p class="text-sm mb-6">
+            Leading provider of intelligent hospital management systems.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blogPage.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="bloginsight.html">Blog Insights</a></li>
+            <li><a href="country.html">Country</a></li>
+            <li><a href="popupform.html">Demo Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 text-xs">© 2024 ITdose Hospital ERP</div>
+    </footer>
+  </body>
+</html>
