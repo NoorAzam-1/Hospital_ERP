@@ -1,0 +1,677 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      Mastering Hospital Billing: A Guide to ERP Integration | ITdose
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#380d00",
+              "on-tertiary-fixed-variant": "#38485d",
+              background: "#f7f9fb",
+              "secondary-fixed": "#dae2fd",
+              "inverse-primary": "#ffb59a",
+              "tertiary-fixed": "#d3e4fe",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "surface-container-low": "#f2f4f6",
+              "surface-tint": "#a83900",
+              "secondary-fixed-dim": "#bec6e0",
+              "on-tertiary-fixed": "#0b1c30",
+              "tertiary-container": "#8b9bb3",
+              "surface-variant": "#e0e3e5",
+              "primary-fixed-dim": "#ffb59a",
+              error: "#ba1a1a",
+              "on-primary-fixed-variant": "#802900",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "surface-container": "#eceef0",
+              tertiary: "#505f76",
+              "on-secondary-fixed-variant": "#3f465c",
+              "on-surface": "#191c1e",
+              "surface-bright": "#f7f9fb",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1e",
+              "primary-container": "#ff6b2c",
+              "on-surface-variant": "#594139",
+              "on-tertiary-container": "#233347",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#2d3133",
+              "tertiary-fixed-dim": "#b7c8e1",
+              "inverse-on-surface": "#eff1f3",
+              "secondary-container": "#dae2fd",
+              primary: "#a83900",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "primary-fixed": "#ffdbcf",
+              "on-secondary-container": "#5c647a",
+              outline: "#8d7167",
+              secondary: "#565e74",
+              "on-primary-container": "#5c1c00",
+              "surface-container-highest": "#e0e3e5",
+              surface: "#f7f9fb",
+              "outline-variant": "#e2bfb3",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#131b2e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "stack-lg": "32px",
+              "stack-sm": "8px",
+              "section-gap": "80px",
+              "container-max": "1280px",
+              "stack-md": "16px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "label-caps": ["Inter"],
+              "body-sm": ["Inter"],
+              h3: ["Inter"],
+              h2: ["Inter"],
+              display: ["Inter"],
+              "body-lg": ["Inter"],
+              h1: ["Inter"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              h3: ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              h2: ["30px", { lineHeight: "1.3", fontWeight: "600" }],
+              display: [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              h1: [
+                "36px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .article-content h2 {
+        @apply font-h2 text-h2 text-on-surface mt-10 mb-4;
+      }
+      .article-content h3 {
+        @apply font-h3 text-h3 text-on-surface mt-8 mb-3;
+      }
+      .article-content p {
+        @apply font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed;
+      }
+      .article-content ul {
+        @apply list-none mb-6 space-y-3;
+      }
+      .article-content li {
+        @apply font-body-md text-body-md text-on-surface-variant flex items-start;
+      }
+      .article-content li::before {
+        content: "check_circle";
+        @apply material-symbols-outlined text-[#ff6b2c] mr-3 mt-1 text-[20px];
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <!-- TopAppBar Component -->
+    <header
+      class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none"
+    >
+      <nav
+        class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl shadow-sm h-20"
+      >
+        <div
+          class="flex justify-between items-center h-full px-8 max-w-screen-2xl mx-auto"
+        >
+          <!-- Logo -->
+          <a
+            href="/"
+            class="text-2xl font-black tracking-tighter text-slate-900"
+            >ITdose</a
+          >
+
+          <!-- Nav -->
+          <div class="hidden md:flex gap-8 items-center relative">
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="modules.html"
+              >Modules</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="features.html"
+              >Features</a
+            >
+
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button
+                class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              >
+                Services ▾
+              </button>
+
+              <div
+                class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48"
+              >
+                <a
+                  href="services.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >All Services</a
+                >
+                <a href="country.html" class="block px-4 py-2 hover:bg-gray-100"
+                  >Country Services</a
+                >
+                <a
+                  href="popupform.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Book Demo Form</a
+                >
+              </div>
+            </div>
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="pricing.html"
+              >Pricing</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="resources.html"
+              >Resources</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="about-us.html"
+              >About</a
+            >
+
+            <a
+              class="text-sm font-medium text-orange-600 hover:text-orange-500"
+              href="blogPage.html"
+              >Blog</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="gallery.html"
+              >Gallery</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="contact-us.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="max-w-[1280px] mx-auto px-6 py-12">
+      <!-- Article Header -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <div class="flex items-center gap-2 mb-4">
+          <span
+            class="bg-[#ff6b2c]/10 text-[#ff6b2c] px-3 py-1 rounded-full font-label-caps text-label-caps"
+            >Billing</span
+          >
+          <span class="text-on-surface-variant font-body-sm text-body-sm"
+            >• 12 min read</span
+          >
+        </div>
+        <h1
+          class="font-display text-display text-on-surface mb-6 leading-tight"
+        >
+          Mastering Hospital Billing: A Guide to ERP Integration
+        </h1>
+        <div class="flex items-center gap-4">
+          <div
+            class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm"
+          >
+            <img
+              alt="Dr. Sarah Chen"
+              class="w-full h-full object-cover"
+              data-alt="A professional headshot of a female doctor in a crisp white lab coat, smiling warmly in a bright, modern medical facility. The background is a soft-focus clinical setting with clean lines and high-key lighting. The overall mood is one of medical expertise, trust, and professional authority, aligned with a high-end SaaS healthcare brand."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmDqNTuNT4BdXof_Xios6Tt-UlK7_PXFjNIQW9mkCMBOCyDRQHCleSDNwb-0TSqxstmK8GY6FTgbYqTrmGHa1Tg7VjUP_4MAc1ZlA9lLR-FymNmdz9BiFVGiA87R06geA1lNoNFCnzCXgLX4fgnREadjB0-37OFW6yOmwt9nzu-vGy55x54_WY8ySYA7gYQ0ueAJidg5flPSjt4jPK_4BU4FQ0V2yi9SQ35FwKwfZakFu2iXhx3pa0uynlynPAeH4PQIvbFc6Mhd8"
+            />
+          </div>
+          <div>
+            <p class="font-semibold text-on-surface">Dr. Sarah Chen</p>
+            <p class="text-on-surface-variant font-body-sm text-body-sm">
+              Oct 15, 2024 • Senior Healthcare Consultant
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Banner Image -->
+      <div
+        class="w-full h-[500px] rounded-2xl overflow-hidden mb-16 shadow-xl relative"
+      >
+        <img
+          alt="Modern Hospital Environment"
+          class="w-full h-full object-cover"
+          data-alt="A panoramic view of a wide, sun-drenched modern hospital lobby featuring minimalist architectural lines and glass partitions. The lighting is bright and natural, reflecting off polished clinical surfaces. The scene conveys a sense of high-efficiency, cleanliness, and advanced medical infrastructure within a professional, premium healthcare management context."
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXLUK1juUFdiNRD21yMx4ludNXxM2srH9FkQkD0EyIW8knM7ir0EcQ3WaqNaQoJWCvS1hrxoetvevc9j-pzJVfbn72cThDxaktuUKsQXKfYdg4KCR0davD9JivuFedzY6xGrkj5vB7xis1lz6QNNt_FnBt8oc0oQRDmzkWo3GHuC3Xq0OLSSe3dx2JraMH6sCD_6j44ZdxUxq0QPcH6-IhUmwlxYJTi17IGGVeOdp3mUkBDnu1DXzVzXUyMUIMczWWDqobRs8tXz0"
+        />
+      </div>
+      <!-- Content Layout with Sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <!-- Article Body -->
+        <article class="lg:col-span-8 article-content">
+          <p>
+            The modern healthcare landscape is shifting from fragmented care
+            models to integrated, data-driven ecosystems. At the heart of this
+            transformation lies the hospital billing cycle—a complex web of
+            patient registration, insurance verification, and revenue capture
+            that often serves as the biggest bottleneck in operational
+            efficiency.
+          </p>
+          <h2>The Evolution of Clinical Billing</h2>
+          <p>
+            Traditional billing systems often operate in silos, isolated from
+            the clinical data that drives them. This separation leads to
+            "revenue leakage," where services rendered are not properly captured
+            or coded. An integrated ERP (Enterprise Resource Planning) solution
+            bridges this gap by creating a single source of truth for both
+            clinical and financial data.
+          </p>
+          <h3>Key Benefits of Deep Integration</h3>
+          <ul>
+            <li>
+              Real-time charge capture directly from physician orders and
+              nursing documentation.
+            </li>
+            <li>
+              Automated insurance verification at the point of admission,
+              reducing claim rejections.
+            </li>
+            <li>
+              Seamless synchronization between pharmacy dispensing and inventory
+              billing.
+            </li>
+            <li>
+              Transparent patient statements that provide a clear breakdown of
+              services in plain language.
+            </li>
+          </ul>
+          <!-- Pro Tip Box -->
+          <div
+            class="bg-[#ff6b2c] p-8 rounded-2xl my-10 relative overflow-hidden shadow-lg"
+          >
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+              <span
+                class="material-symbols-outlined text-[120px]"
+                data-icon="lightbulb"
+                >lightbulb</span
+              >
+            </div>
+            <div class="relative z-10">
+              <h4
+                class="text-white font-bold text-xl mb-3 flex items-center gap-2"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  data-icon="tips_and_updates"
+                  >tips_and_updates</span
+                >
+                Pro Tip for Revenue Integrity
+              </h4>
+              <p class="text-white/90 font-body-md leading-relaxed m-0">
+                Implement "Shadow Billing" during the first three months of ERP
+                integration. This allows your team to compare outputs from the
+                legacy system against the new ERP, identifying discrepancies in
+                real-time before they impact your financial reporting or patient
+                satisfaction scores.
+              </p>
+            </div>
+          </div>
+          <h2>Navigating the Implementation Challenges</h2>
+          <p>
+            While the benefits are clear, the path to integration requires
+            meticulous planning. The most common hurdle isn't technical—it's
+            cultural. Moving clinicians from paper or legacy digital forms to an
+            integrated ERP requires comprehensive training and a focus on "ease
+            of use."
+          </p>
+          <p>
+            At ITdose, we emphasize a UI-first approach. By making the interface
+            as intuitive as high-end consumer software, we reduce the cognitive
+            load on staff, ensuring that documentation is completed accurately
+            and billing data is captured naturally within the clinical workflow.
+          </p>
+        </article>
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-10">
+          <!-- Search & Social -->
+          <div
+            class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm"
+          >
+            <h4 class="font-semibold text-slate-900 mb-4">Search Articles</h4>
+            <div class="relative mb-6">
+              <input
+                class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#ff6b2c] focus:border-[#ff6b2c] transition-all"
+                placeholder="Search billing guides..."
+                type="text"
+              />
+              <span
+                class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400"
+                data-icon="search"
+                >search</span
+              >
+            </div>
+            <h4 class="font-semibold text-slate-900 mb-4">Share this guide</h4>
+            <div class="flex gap-3">
+              <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 border border-slate-200 hover:bg-[#ff6b2c]/5 hover:text-[#ff6b2c] transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined text-[20px]"
+                  data-icon="share"
+                  >share</span
+                >
+              </button>
+              <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 border border-slate-200 hover:bg-[#ff6b2c]/5 hover:text-[#ff6b2c] transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined text-[20px]"
+                  data-icon="bookmark"
+                  >bookmark</span
+                >
+              </button>
+              <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 border border-slate-200 hover:bg-[#ff6b2c]/5 hover:text-[#ff6b2c] transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined text-[20px]"
+                  data-icon="mail"
+                  >mail</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Recent Posts -->
+          <div
+            class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm"
+          >
+            <h4 class="font-semibold text-slate-900 mb-6">Recent Posts</h4>
+            <div class="space-y-6">
+              <a class="group flex gap-4" href="#">
+                <div class="w-16 h-16 shrink-0 rounded-lg overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="A clean, minimalist close-up of a digital medical tablet showing healthcare analytics charts. Soft blue and orange gradients highlight the modern interface."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiRySjU0dQN3vMFSji9EzMKzjNZYbL-OBSz3PmQYRB2JDXLEb6AghNGiMz9vLjzjUeRrUYAuyzEUTxJLqQA9jTKvnxEkWGuHUJ0sIjmtIywNFWIlocYT9ASA2FENXopceeGaGyLJb0AiwiwrBSOEswHdHPsCzZhceg8zhWcWvGfDsB1nswtUaA8mMDAeX9cRp0-AWRtHvU5-_ewRCrr1jSUlweSlVlGRWelGHgc1IFRQkFq94Q6sMBuW2-dup_aRI1D81FA2054vg"
+                  />
+                </div>
+                <div>
+                  <p
+                    class="text-sm font-semibold group-hover:text-[#ff6b2c] transition-colors line-clamp-2"
+                  >
+                    Optimizing Pharmacy Workflows with ERP
+                  </p>
+                  <span class="text-xs text-slate-400">Oct 12, 2024</span>
+                </div>
+              </a>
+              <a class="group flex gap-4" href="#">
+                <div class="w-16 h-16 shrink-0 rounded-lg overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="An abstract high-tech visual of glowing interconnected nodes in a clinical environment, representing hospital data synchronization. Bright white and soft grey tones with orange accents."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWbUrwyeNbYIaIwdvKtxwKD682dA01-nQ5zaO5jOKMn95ucZ60LvPJBpxva3lMY23N05rbSIgxx38oDA_UY-zcjorFJSsFlGVSrWMAttE_ED0YU9mRnwY_iuszoV7gnuGlb_ufjSTSpvRWTw9YpjG9c9r9dmEKO_8dZXIEy2Hazdq0Yg1tiYl22DG6HXGBEb3Tn7f5y4uIQOC0xU_kDw0iiKcfFgaPsw468s0nSvZj-D1EsOHfjUKQT7pARrKZggL7cpGMeJSFvCg"
+                  />
+                </div>
+                <div>
+                  <p
+                    class="text-sm font-semibold group-hover:text-[#ff6b2c] transition-colors line-clamp-2"
+                  >
+                    Patient Experience: Beyond the Clinical Visit
+                  </p>
+                  <span class="text-xs text-slate-400">Oct 08, 2024</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- CTA Card -->
+          <div
+            class="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden"
+          >
+            <div
+              class="absolute -right-12 -top-12 w-40 h-40 bg-[#ff6b2c]/20 rounded-full blur-3xl"
+            ></div>
+            <h4 class="text-2xl font-bold mb-4 relative z-10">
+              See ITdose in Action
+            </h4>
+            <p class="text-slate-300 mb-8 relative z-10 leading-relaxed">
+              Schedule a personalized walkthrough of our billing and ERP
+              solutions designed for elite hospitals.
+            </p>
+            <button
+              class="w-full bg-[#ff6b2c] text-white py-3 rounded-lg font-bold hover:scale-[1.02] transition-transform shadow-lg shadow-[#ff6b2c]/20"
+            >
+              Book My Demo
+            </button>
+            <p class="text-center text-xs text-slate-500 mt-4">
+              Free 30-minute consultation
+            </p>
+          </div>
+        </aside>
+      </div>
+      <!-- Related Posts Section -->
+      <section class="mt-24 pt-16 border-t border-slate-200">
+        <div class="flex justify-between items-end mb-10">
+          <div>
+            <h2 class="font-h2 text-h2 mb-2">Related Articles</h2>
+            <p class="text-on-surface-variant">
+              Deepen your knowledge of healthcare management.
+            </p>
+          </div>
+          <a
+            class="text-[#ff6b2c] font-semibold flex items-center gap-1 hover:gap-2 transition-all"
+            href="#"
+          >
+            View Blog
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                alt="Related Post 1"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A futuristic medical laboratory with soft blue lighting and clinical workstations. A healthcare professional interacts with a holographic display showing complex hospital data. The style is ultra-modern and professional, with a focus on clinical precision and technology."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0z2dU0y7Y1IFx3UXafaoKH3uQZv6Fzbj8pkPNlAkpoT63tgFdFopaJVIZVqxjvK-yR1FJ1gNdFSSysokM6N-TZ4lM7BJRSk80IUYgfvgkQUhE2BQDPAbr6H58xisJko_VTh_LuOrNog4THItN4hZlhNnvERl9yMXXgaUK3t6UuL1thuhXvwgI9dW0t8LNUfkqEwIadaSmt20hSZ13vPJ9Ax56EZiWIAYe5pxZjEo_VDke4frnFBzulPczfFEkWiZLt0Yg97C6seY"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-[10px] uppercase tracking-widest font-bold text-[#ff6b2c] mb-2 block"
+                >Implementation</span
+              >
+              <h3
+                class="font-h3 text-[20px] mb-3 group-hover:text-[#ff6b2c] transition-colors"
+              >
+                5 Myths About Cloud ERP in Hospitals
+              </h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">
+                Don't let legacy fears hold your institution back. We debunk the
+                most common security myths.
+              </p>
+              <span class="text-slate-400 text-xs font-medium uppercase"
+                >Oct 01 • 8 min read</span
+              >
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                alt="Related Post 2"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A close-up of a high-resolution monitor displaying clinical performance metrics and hospital dashboards. The UI is clean, modern, and data-dense but readable, using the ITdose brand colors. High-key clinical background lighting creates a bright, authoritative feel."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSEHmIH7OU5rrIWsd1CikrYAvo_Ig0lC45edBv-DVPxpV2IltDNnj3KOFRpGsdN7zIIGjzDIQo3spXDXkKHlgdcY1X9BYY0d-lHFLALvDmxN5HtYy8Gf8zNSlbGew8bFqPooI1IBI4b34MYrlqYFwtgv6pt3vvVI3XLetK7qMbP3V1MRTc55MZw07iA2gwZIko5lcn8EpmyDJgoh6wVvFHE7TzydfQtyNnzwlhKCWd-6T65LOOioeKxNT_GxI920FXK0JIhLSVdQU"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-[10px] uppercase tracking-widest font-bold text-[#ff6b2c] mb-2 block"
+                >Analytics</span
+              >
+              <h3
+                class="font-h3 text-[20px] mb-3 group-hover:text-[#ff6b2c] transition-colors"
+              >
+                Measuring ROI of Hospital ERP Systems
+              </h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">
+                A quantitative framework for calculating the long-term savings
+                of clinical automation.
+              </p>
+              <span class="text-slate-400 text-xs font-medium uppercase"
+                >Sep 28 • 15 min read</span
+              >
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                alt="Related Post 3"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A diverse group of medical professionals in scrubs and white coats gathered around a large touchscreen display in a brightly lit, modern conference room. They are discussing hospital operations. The lighting is crisp and even, emphasizing a collaborative, high-efficiency corporate culture."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLXbSlqkvaUmA7btvdmhnfwnyieQ_G4btDfq6k6r3upGqC5ZV-aYN4a5BwpyAMB1E0Gjp-NBuP6x6-NX_yNtxB7iTRuqKKSZsDWZZvCrTJTMFEpJ3mctZdL20MVMHuv2ExWdplfoUrjrZu0G425-0Yc2dbw6UnH7LZuGc_TTdwgDvBAIaskkAotbp9_Ei6Hf4w1cneWvNdbQvbF-p-v93ShRJ-fwacCfphcpqNvagtv9L3ZlA-h_Rvky4h4SN-01BbyUnucRXWaMU"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-[10px] uppercase tracking-widest font-bold text-[#ff6b2c] mb-2 block"
+                >Culture</span
+              >
+              <h3
+                class="font-h3 text-[20px] mb-3 group-hover:text-[#ff6b2c] transition-colors"
+              >
+                Training Staff for a Paperless Future
+              </h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">
+                Strategies for successful digital adoption across
+                multi-generational clinical teams.
+              </p>
+              <span class="text-slate-400 text-xs font-medium uppercase"
+                >Sep 22 • 10 min read</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Component -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Logo -->
+        <div>
+          <div class="text-xl font-bold text-white mb-6">ITdose</div>
+          <p class="text-sm mb-6">
+            Leading provider of intelligent hospital management systems.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blogPage.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="bloginsight.html">Blog Insights</a></li>
+            <li><a href="country.html">Country</a></li>
+            <li><a href="popupform.html">Demo Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 text-xs">© 2024 ITdose Hospital ERP</div>
+    </footer>
+  </body>
+</html>
