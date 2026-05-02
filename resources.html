@@ -1,0 +1,842 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Resources Hub | Adidose Health Systems</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#e4e9ed",
+              "inverse-primary": "#ffb59a",
+              "tertiary-fixed": "#dae2fd",
+              "surface-container-low": "#f0f4f8",
+              "on-primary-fixed": "#380d00",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "inverse-surface": "#2c3134",
+              "surface-bright": "#f6fafe",
+              "primary-container": "#ff6b2c",
+              "surface-container-highest": "#dfe3e7",
+              "on-primary-fixed-variant": "#802900",
+              "on-error-container": "#93000a",
+              "on-surface": "#171c1f",
+              "on-secondary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-background": "#171c1f",
+              "surface-variant": "#dfe3e7",
+              primary: "#a83900",
+              "on-tertiary-fixed": "#131b2e",
+              "surface-dim": "#d6dade",
+              "secondary-container": "#dfe0e0",
+              "on-tertiary-container": "#293145",
+              "on-secondary-fixed": "#1a1c1c",
+              "surface-container": "#eaeef2",
+              secondary: "#5d5f5f",
+              outline: "#8d7167",
+              "primary-fixed": "#ffdbcf",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#454747",
+              "tertiary-fixed-dim": "#bec6e0",
+              "secondary-fixed-dim": "#c6c6c7",
+              "surface-container-lowest": "#ffffff",
+              tertiary: "#565e74",
+              "inverse-on-surface": "#edf1f5",
+              surface: "#f6fafe",
+              "on-surface-variant": "#594139",
+              "on-secondary-container": "#616363",
+              "surface-tint": "#a83900",
+              "secondary-fixed": "#e2e2e2",
+              "on-primary-container": "#5c1c00",
+              background: "#f6fafe",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#9199b1",
+              "outline-variant": "#e2bfb3",
+              "primary-fixed-dim": "#ffb59a",
+              error: "#ba1a1a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xs: "0.25rem",
+              md: "1rem",
+              sm: "0.5rem",
+              xl: "2.5rem",
+              lg: "1.5rem",
+              "container-margin": "2rem",
+              base: "4px",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              "body-md": ["Inter"],
+              h2: ["Inter"],
+              "data-tabular": ["Inter"],
+              h3: ["Inter"],
+              "body-lg": ["Inter"],
+              "label-caps": ["Inter"],
+              h1: ["Inter"],
+              "body-sm": ["Inter"],
+            },
+            fontSize: {
+              "body-md": [
+                "16px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h2: [
+                "30px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "data-tabular": ["14px", { lineHeight: "1", fontWeight: "500" }],
+              h3: [
+                "24px",
+                { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+              ],
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+              ],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              h1: [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": [
+                "14px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .orange-gradient {
+        background: linear-gradient(135deg, #ff6b2c 0%, #a83900 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background font-body-md antialiased">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none"
+    >
+      <nav
+        class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl shadow-sm h-20"
+      >
+        <div
+          class="flex justify-between items-center h-full px-8 max-w-screen-2xl mx-auto"
+        >
+          <!-- Logo -->
+          <a
+            href="/"
+            class="text-2xl font-black tracking-tighter text-slate-900"
+            >ITdose</a
+          >
+
+          <!-- Nav -->
+          <div class="hidden md:flex gap-8 items-center relative">
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="modules.html"
+              >Modules</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="features.html"
+              >Features</a
+            >
+
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button
+                class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              >
+                Services ▾
+              </button>
+
+              <div
+                class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-48"
+              >
+                <a
+                  href="services.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >All Services</a
+                >
+                <a href="country.html" class="block px-4 py-2 hover:bg-gray-100"
+                  >Country Services</a
+                >
+                <a
+                  href="popupform.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Book Demo Form</a
+                >
+              </div>
+            </div>
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="pricing.html"
+              >Pricing</a
+            >
+
+            <a
+              class="text-sm font-medium text-orange-600 hover:text-orange-500"
+              href="resources.html"
+              >Resources</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="about-us.html"
+              >About</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="blogPage.html"
+              >Blog</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="gallery.html"
+              >Gallery</a
+            >
+
+            <a
+              class="text-sm font-medium text-slate-600 hover:text-orange-500"
+              href="contact-us.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="relative pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div
+            class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary-container/10 rounded-full blur-[120px]"
+          ></div>
+          <div
+            class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-tertiary-container/10 rounded-full blur-[100px]"
+          ></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-primary font-label-caps mb-6 uppercase tracking-widest"
+            >Knowledge Hub</span
+          >
+          <h1 class="font-h1 text-h1 text-on-surface mb-8 max-w-4xl mx-auto">
+            Resources for the next generation of
+            <span class="text-primary-container">healthcare leaders</span>.
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-12"
+          >
+            Empower your clinical and administrative teams with expert insights,
+            technical guides, and proven hospital management strategies.
+          </p>
+          <div class="max-w-2xl mx-auto relative group">
+            <div
+              class="absolute inset-y-0 left-5 flex items-center pointer-events-none"
+            >
+              <span
+                class="material-symbols-outlined text-outline"
+                data-icon="search"
+                >search</span
+              >
+            </div>
+            <input
+              class="w-full pl-14 pr-32 py-5 rounded-2xl border-slate-200 focus:border-primary-container focus:ring-4 focus:ring-primary-container/10 shadow-xl shadow-slate-200/50 font-body-md"
+              placeholder="Search for documentation, articles, or checklists..."
+              type="text"
+            />
+            <button
+              class="absolute right-3 top-3 bottom-3 px-6 rounded-xl orange-gradient text-white font-semibold"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Blog/Articles Grid -->
+      <section class="py-24 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex justify-between items-end mb-12">
+            <div>
+              <h2 class="font-h2 text-h2 text-on-surface mb-2">
+                Latest Insights
+              </h2>
+              <p class="text-secondary">
+                Stay ahead with the latest trends in digital health.
+              </p>
+            </div>
+            <a
+              class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+              href="#"
+            >
+              View All Articles
+              <span class="material-symbols-outlined" data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <div class="group cursor-pointer">
+              <div
+                class="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6"
+              >
+                <img
+                  class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  data-alt="A futuristic hospital ward with advanced glowing screens and digital diagnostic equipment in a clean white environment. The lighting is soft and professional with clinical blue and warm orange accents to emphasize modern healthcare technology."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjWiUK0acv7kMYU9LK8kP4NJeEz6XCKfuI-oX2BC2RorRATVnmv6NDwtdHBVm7kMpqDNaHxVVYT9xkY-g2i6eH9QjRa-ACr0FWxtFXVZ1WkEoU-qU_xsuBt-TQjofOzOzHPHHxR0k5Z1l1OH7lI21tARmCxXggePKOngp5AltbpWoYBBr2sQn05i4ajOH0_CQ5yJC8Ut1hcX5oMFbokoq554DW6TlCvsjluVA_Fhhg88Mfjg6lr5U0LbmEWzi-w5J69fCtiAa5G7M"
+                />
+                <span
+                  class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-primary text-xs font-bold uppercase font-label-caps"
+                  >Hospital Management</span
+                >
+              </div>
+              <h3
+                class="font-h3 text-h3 text-on-surface mb-3 group-hover:text-primary-container transition-colors"
+              >
+                Optimizing Patient Flow in Multi-Specialty Clinics
+              </h3>
+              <p class="text-secondary font-body-sm line-clamp-3">
+                Discover how modern ERP systems are reducing wait times by 40%
+                through intelligent scheduling and resource allocation
+                algorithms.
+              </p>
+            </div>
+            <!-- Article 2 -->
+            <div class="group cursor-pointer">
+              <div
+                class="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6"
+              >
+                <img
+                  class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  data-alt="A close-up of a high-tech medical tablet showing colorful data visualizations and patient health analytics. The scene is bright and airy with clinical white surfaces and soft sunlight, creating a reliable and innovative tech-driven healthcare atmosphere."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNufjOvR6t4eAyjPPZNZeJ4rTlHvA_KbeR4WBXy7C9S8r2x_uSOTqVrMqAhIDNxtaahjsywUSzRq2AlDsC92mQwYalgmpASyy0vvg1EBKCfl5ToMY1NzAm-3dyw-XI7Bgv4qxwr_9fyhrHl72YJjlH769U9GMFGt6pJ59IipjzXkBw884oeauQJTgmJMLkOoJo6CL9h8oYohyjgQ-xFK4EgGjIOTP-Wdes5D_wA1J-6TZPB_ugkUugkiOtBo43SidTU7-ztY266ZE"
+                />
+                <span
+                  class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-primary text-xs font-bold uppercase font-label-caps"
+                  >Digital Health</span
+                >
+              </div>
+              <h3
+                class="font-h3 text-h3 text-on-surface mb-3 group-hover:text-primary-container transition-colors"
+              >
+                The Future of AI in Electronic Health Records
+              </h3>
+              <p class="text-secondary font-body-sm line-clamp-3">
+                Predictive analytics are no longer science fiction. Learn how AI
+                is assisting doctors in early diagnosis within the ITdose
+                ecosystem.
+              </p>
+            </div>
+            <!-- Article 3 -->
+            <div class="group cursor-pointer">
+              <div
+                class="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6"
+              >
+                <img
+                  class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  data-alt="An organized medical team working together in a high-tech control center environment. They are interacting with large transparent screens showing real-time hospital logistics. The aesthetic is professional, modern, and energetic with orange and navy color themes."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOK8zb8yOEuI4b0_EU64OZ75jmEHhOWqIsrawKDpZ4d6cEjurHUQMZUgpeS6NUD4BcGJRo_I92lJMCAuY6Tx-Da8uh5CMUfAQDSVKQEE8WilXEKpMPEg3ktp2XPd8MrsHSBYJKqQtL1Cjmtoj0U7mqB1MwtiXo6UR-bznvMRFVOgaebZ4Gp4mwUk5EDhd2ywdO0-fPRTNSDNipT8yTzuqUdwsB0zCUHL6KbXog8ANgm1Vnhqw4X3obdNbNE9SIatHZG5-074WqHe4"
+                />
+                <span
+                  class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-primary text-xs font-bold uppercase font-label-caps"
+                  >Operations</span
+                >
+              </div>
+              <h3
+                class="font-h3 text-h3 text-on-surface mb-3 group-hover:text-primary-container transition-colors"
+              >
+                Reducing Operational Overhead with Unified ERP
+              </h3>
+              <p class="text-secondary font-body-sm line-clamp-3">
+                Consolidating billing, pharmacy, and laboratory modules can lead
+                to a 25% reduction in administrative costs for large
+                institutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Guides & Documentation -->
+      <section class="py-24 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4">
+              <h2 class="font-h2 text-h2 text-on-surface mb-6">
+                Guides &amp; Documentation
+              </h2>
+              <p class="text-secondary mb-8">
+                Step-by-step implementation resources and compliance checklists
+                for IT administrators and clinical leads.
+              </p>
+              <div
+                class="p-6 rounded-2xl bg-primary-fixed/30 border border-primary/10"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-4xl mb-4"
+                  data-icon="auto_awesome"
+                  >auto_awesome</span
+                >
+                <h4 class="font-h3 text-body-lg text-primary mb-2">
+                  Need a Custom Demo?
+                </h4>
+                <p class="text-body-sm text-on-surface-variant mb-6">
+                  Our specialists can walk you through a tailored setup for your
+                  specific facility type.
+                </p>
+                <button
+                  class="w-full py-3 bg-primary text-white rounded-lg font-semibold"
+                >
+                  Contact Specialist
+                </button>
+              </div>
+            </div>
+            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Guide Card 1 -->
+              <div
+                class="p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border border-slate-100 flex flex-col group"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined" data-icon="book"
+                    >book</span
+                  >
+                </div>
+                <h4 class="font-h3 text-h3 text-on-surface mb-4">
+                  The Ultimate Guide to Hospital ERP
+                </h4>
+                <p class="text-secondary font-body-sm mb-6 flex-grow">
+                  A comprehensive 50-page whitepaper on selecting and
+                  implementing enterprise resource planning in healthcare.
+                </p>
+                <a
+                  class="text-primary-container font-bold flex items-center gap-2"
+                  href="#"
+                  >Download PDF
+                  <span class="material-symbols-outlined" data-icon="download"
+                    >download</span
+                  ></a
+                >
+              </div>
+              <!-- Guide Card 2 -->
+              <div
+                class="p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border border-slate-100 flex flex-col group"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-tertiary mb-6 group-hover:bg-tertiary group-hover:text-white transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="verified_user"
+                    >verified_user</span
+                  >
+                </div>
+                <h4 class="font-h3 text-h3 text-on-surface mb-4">
+                  HIPAA Compliance Checklist
+                </h4>
+                <p class="text-secondary font-body-sm mb-6 flex-grow">
+                  Ensure your digital infrastructure meets all regulatory
+                  standards with our essential security audit list.
+                </p>
+                <a
+                  class="text-primary-container font-bold flex items-center gap-2"
+                  href="#"
+                  >View Checklist
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="open_in_new"
+                    >open_in_new</span
+                  ></a
+                >
+              </div>
+              <!-- Guide Card 3 -->
+              <div
+                class="p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border border-slate-100 flex flex-col group"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-green-700 mb-6 group-hover:bg-green-700 group-hover:text-white transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="settings_input_component"
+                    >settings_input_component</span
+                  >
+                </div>
+                <h4 class="font-h3 text-h3 text-on-surface mb-4">
+                  Integration API Docs
+                </h4>
+                <p class="text-secondary font-body-sm mb-6 flex-grow">
+                  Technical documentation for connecting ITdose with 3rd party
+                  laboratory and diagnostic equipment.
+                </p>
+                <a
+                  class="text-primary-container font-bold flex items-center gap-2"
+                  href="#"
+                  >Developer Portal
+                  <span class="material-symbols-outlined" data-icon="code"
+                    >code</span
+                  ></a
+                >
+              </div>
+              <!-- Guide Card 4 -->
+              <div
+                class="p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all border border-slate-100 flex flex-col group"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700 mb-6 group-hover:bg-purple-700 group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined" data-icon="school"
+                    >school</span
+                  >
+                </div>
+                <h4 class="font-h3 text-h3 text-on-surface mb-4">
+                  Staff Training Modules
+                </h4>
+                <p class="text-secondary font-body-sm mb-6 flex-grow">
+                  Video tutorials and quick-start guides for nursing staff and
+                  frontline clinicians.
+                </p>
+                <a
+                  class="text-primary-container font-bold flex items-center gap-2"
+                  href="#"
+                  >Access Portal
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="play_circle"
+                    >play_circle</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Case Studies -->
+      <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="mb-12">
+            <h2 class="font-h2 text-h2 text-on-surface mb-2">
+              Success Stories
+            </h2>
+            <p class="text-secondary">
+              See how leading healthcare institutions transformed their
+              operations.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Case Study 1 -->
+            <div
+              class="relative group rounded-3xl overflow-hidden shadow-2xl bg-slate-900 aspect-[16/10]"
+            >
+              <img
+                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700"
+                data-alt="An expansive aerial view of a massive modern hospital complex 'City Hospital' during dusk. The building is illuminated with sophisticated architectural lighting. The scene conveys scale, trust, and advanced healthcare infrastructure in a clean professional photography style."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH5bESDmduLuaEFsyeTePO9-V3Ip_HgSI8WF8VwrCAh7cq77oHrTbxTdoeHAyNgkBwP3nyO2JNnIqanE6z92VMAslRjifHgvKOMwf1lf3ASIT2b3DB55J86eC8fxhBxaQ7aIvPR7LxEn8Dl88b0IyPIoVVox_cDxLaZ5rg7CnZGg3wCEDPm4pnjsUzL9QvKHopk4Pl5XUo36UuhyT-kMrHWGynwIW3ETHVSQD8sKLcof-duWgQv-_tHXHpLc6EgebBbcafkGGFS9Q"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 p-10">
+                <span
+                  class="text-primary-container font-bold uppercase tracking-widest text-xs mb-4 block"
+                  >Case Study</span
+                >
+                <h3 class="text-3xl font-bold text-white mb-4">
+                  City Hospital: A 300% ROI Transition
+                </h3>
+                <p class="text-slate-300 mb-8 max-w-md">
+                  Learn how the largest metro hospital migrated their legacy
+                  systems to Adidose in under 6 months without operational
+                  downtime.
+                </p>
+                <button
+                  class="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-primary-container hover:text-white transition-all"
+                >
+                  Read Story
+                </button>
+              </div>
+            </div>
+            <!-- Case Study 2 -->
+            <div
+              class="relative group rounded-3xl overflow-hidden shadow-2xl bg-slate-900 aspect-[16/10]"
+            >
+              <img
+                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700"
+                data-alt="A scientist in a sterile modern laboratory environment 'Apex Diagnostics' analyzing a complex digital diagnostic read-out on a holographic-style screen. Bright clinical lighting and a high-tech atmosphere with blue and white tones dominate the frame."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuRz_vX7HlQ5oYWnPA0sv_ZYrFGS1L5unvv1QJfMYx-TrnzilyrI2lsmMWDouv5gA50QBTHI2V8C57mE358FOwTTEuZS01TQYGIDBi5T5KYPATUiScNFTRDVooCedOwI_TfhJuolSzGFpe6Q79MB2vbQc9ICqcewCrrRsxSodTe9y9QfTa0TRX9sxqoYFLg8VZlNkLxhmnrKspiWvdFpVC8czlIsHHWiLOAuXp6jIlE4Uqn2g4r3XAhJxjdlaun90UkjNpcffZVrQ"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 p-10">
+                <span
+                  class="text-primary-container font-bold uppercase tracking-widest text-xs mb-4 block"
+                  >Case Study</span
+                >
+                <h3 class="text-3xl font-bold text-white mb-4">
+                  Apex Diagnostics: Laboratory Precision
+                </h3>
+                <p class="text-slate-300 mb-8 max-w-md">
+                  Automating report generation and patient delivery for a
+                  national diagnostic chain servicing over 50,000 patients
+                  monthly.
+                </p>
+                <button
+                  class="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-primary-container hover:text-white transition-all"
+                >
+                  Read Story
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <section class="py-24 bg-surface-container-highest">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="font-h2 text-h2 text-on-surface mb-4">Technical FAQ</h2>
+            <p class="text-secondary">
+              Quick answers to common implementation and technical questions.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <details
+              class="group bg-white rounded-2xl border border-slate-200 open:shadow-lg transition-all"
+              open=""
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-h3 text-body-lg text-on-surface"
+                  >Is ITdose cloud-native or on-premise?</span
+                >
+                <span
+                  class="material-symbols-outlined transition-transform group-open:rotate-180"
+                  data-icon="expand_more"
+                  >expand_more</span
+                >
+              </summary>
+              <div
+                class="px-6 pb-6 text-secondary font-body-md border-t border-slate-100 pt-4"
+              >
+                Adidose Health Systems offers a hybrid approach. While our
+                platform is cloud-native for scalability and remote access, we
+                also provide local-cloud deployments for institutions with
+                strict data residency requirements.
+              </div>
+            </details>
+            <!-- FAQ 2 -->
+            <details
+              class="group bg-white rounded-2xl border border-slate-200 open:shadow-lg transition-all"
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-h3 text-body-lg text-on-surface"
+                  >What are the hardware requirements for the terminal
+                  clients?</span
+                >
+                <span
+                  class="material-symbols-outlined transition-transform group-open:rotate-180"
+                  data-icon="expand_more"
+                  >expand_more</span
+                >
+              </summary>
+              <div
+                class="px-6 pb-6 text-secondary font-body-md border-t border-slate-100 pt-4"
+              >
+                Our system is designed to be lightweight. Any modern
+                browser-capable machine with 4GB RAM can run the interface. For
+                diagnostic imaging workstations, we recommend dedicated GPU
+                support for HL7/DICOM rendering.
+              </div>
+            </details>
+            <!-- FAQ 3 -->
+            <details
+              class="group bg-white rounded-2xl border border-slate-200 open:shadow-lg transition-all"
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-h3 text-body-lg text-on-surface"
+                  >How does the system handle internet outages?</span
+                >
+                <span
+                  class="material-symbols-outlined transition-transform group-open:rotate-180"
+                  data-icon="expand_more"
+                  >expand_more</span
+                >
+              </summary>
+              <div
+                class="px-6 pb-6 text-secondary font-body-md border-t border-slate-100 pt-4"
+              >
+                We use a robust offline-sync technology. Local critical patient
+                data is cached and synchronized automatically once connectivity
+                is restored, ensuring zero interruption in patient care.
+              </div>
+            </details>
+            <!-- FAQ 4 -->
+            <details
+              class="group bg-white rounded-2xl border border-slate-200 open:shadow-lg transition-all"
+            >
+              <summary
+                class="flex justify-between items-center p-6 cursor-pointer list-none"
+              >
+                <span class="font-h3 text-body-lg text-on-surface"
+                  >Can we integrate our existing lab equipment?</span
+                >
+                <span
+                  class="material-symbols-outlined transition-transform group-open:rotate-180"
+                  data-icon="expand_more"
+                  >expand_more</span
+                >
+              </summary>
+              <div
+                class="px-6 pb-6 text-secondary font-body-md border-t border-slate-100 pt-4"
+              >
+                Yes, Adidose supports standard HL7, DICOM, and proprietary
+                protocols for most major medical equipment manufacturers
+                including GE Healthcare, Siemens, and Roche.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-24 max-w-7xl mx-auto px-6">
+        <div
+          class="orange-gradient rounded-[40px] p-12 md:p-24 text-center text-white relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"
+          ></div>
+          <div class="relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+              Ready to transform your <br />hospital operations?
+            </h2>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12">
+              Join 500+ healthcare institutions globally who trust Adidose for
+              their digital infrastructure.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+              <button
+                class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all active:scale-95"
+              >
+                Book a Free Consultation
+              </button>
+              <button
+                class="bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transition-all"
+              >
+                Contact Support
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Logo -->
+        <div>
+          <div class="text-xl font-bold text-white mb-6">ITdose</div>
+          <p class="text-sm mb-6">
+            Leading provider of intelligent hospital management systems.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blogPage.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="bloginsight.html">Blog Insights</a></li>
+            <li><a href="country.html">Country</a></li>
+            <li><a href="popupform.html">Demo Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 text-xs">© 2024 ITdose Hospital ERP</div>
+    </footer>
+  </body>
+</html>
