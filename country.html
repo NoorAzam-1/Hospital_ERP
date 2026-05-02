@@ -1,0 +1,809 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hospital ERP Software in India | ITdose</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#293145",
+              "primary-container": "#ff6b2c",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#380d00",
+              "on-secondary-fixed-variant": "#454747",
+              "surface-container-low": "#f0f4f8",
+              secondary: "#5d5f5f",
+              outline: "#8d7167",
+              primary: "#a83900",
+              "on-secondary-fixed": "#1a1c1c",
+              "surface-dim": "#d6dade",
+              "secondary-container": "#dfe0e0",
+              "surface-tint": "#a83900",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#171c1f",
+              "tertiary-container": "#9199b1",
+              "surface-bright": "#f6fafe",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              surface: "#f6fafe",
+              "primary-fixed": "#ffdbcf",
+              "tertiary-fixed-dim": "#bec6e0",
+              "inverse-primary": "#ffb59a",
+              "secondary-fixed": "#e2e2e2",
+              "inverse-on-surface": "#edf1f5",
+              "secondary-fixed-dim": "#c6c6c7",
+              background: "#f6fafe",
+              "surface-container-highest": "#dfe3e7",
+              tertiary: "#565e74",
+              "on-primary-fixed-variant": "#802900",
+              "on-primary-container": "#5c1c00",
+              "tertiary-fixed": "#dae2fd",
+              "on-secondary-container": "#616363",
+              "on-primary": "#ffffff",
+              "outline-variant": "#e2bfb3",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e4e9ed",
+              "on-surface-variant": "#594139",
+              "on-surface": "#171c1f",
+              "surface-variant": "#dfe3e7",
+              "primary-fixed-dim": "#ffb59a",
+              "inverse-surface": "#2c3134",
+              "surface-container": "#eaeef2",
+              error: "#ba1a1a",
+              "on-tertiary-fixed": "#131b2e",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xs: "0.25rem",
+              md: "1rem",
+              lg: "1.5rem",
+              gutter: "1.5rem",
+              base: "4px",
+              xl: "2.5rem",
+              sm: "0.5rem",
+              "container-margin": "2rem",
+            },
+            fontFamily: {
+              "body-sm": ["Inter"],
+              h3: ["Inter"],
+              "data-tabular": ["Inter"],
+              "body-lg": ["Inter"],
+              h2: ["Inter"],
+              h1: ["Inter"],
+              "label-caps": ["Inter"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              "body-sm": [
+                "14px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h3: [
+                "24px",
+                { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+              ],
+              "data-tabular": ["14px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h2: [
+                "30px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              h1: [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              "body-md": [
+                "16px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+      }
+      .primary-gradient {
+        background: linear-gradient(to right, #ff6b2c, #ff8e5a);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background font-body-md text-on-surface selection:bg-primary-container selection:text-white"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl shadow-sm h-20"
+    >
+      <div
+        class="flex justify-between items-center h-full px-8 max-w-screen-2xl mx-auto"
+      >
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-black tracking-tighter text-slate-900"
+          >ITdose</a
+        >
+
+        <!-- Nav -->
+        <div class="hidden md:flex gap-8 items-center relative">
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="modules.html"
+            >Modules</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="features.html"
+            >Features</a
+          >
+
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button
+              class="text-sm font-medium text-orange-600 hover:text-orange-500"
+            >
+              Services ▾
+            </button>
+
+            <div
+              class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48"
+            >
+              <a href="services.html" class="block px-4 py-2 hover:bg-gray-100"
+                >All Services</a
+              >
+              <a href="country.html" class="block px-4 py-2 hover:bg-gray-100"
+                >Country Services</a
+              >
+              <a href="popupform.html" class="block px-4 py-2 hover:bg-gray-100"
+                >Book Demo Form</a
+              >
+            </div>
+          </div>
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="pricing.html"
+            >Pricing</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="resources.html"
+            >Resources</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="about-us.html"
+            >About</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="blogPage.html"
+            >Blog</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="gallery.html"
+            >Gallery</a
+          >
+
+          <a
+            class="text-sm font-medium text-slate-600 hover:text-orange-500"
+            href="contact-us.html"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 hero-gradient">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="space-y-6">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-container/10 text-primary-container font-label-caps uppercase tracking-wider text-label-caps"
+            >Trusted across India</span
+          >
+          <h1 class="font-h1 text-h1 text-on-surface max-w-xl">
+            Best Hospital ERP Software in India
+          </h1>
+          <p class="font-body-lg text-body-lg text-secondary max-w-lg">
+            Designed for Indian hospitals, clinics, and diagnostic centers to
+            streamline operations, maintain compliance, and boost patient care
+            efficiency.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <button
+              class="primary-gradient text-white px-8 py-4 rounded-xl font-bold text-body-md shadow-xl shadow-primary-container/30 hover:shadow-2xl transition-all"
+            >
+              Book Demo
+            </button>
+            <button
+              class="border-2 border-outline/20 text-on-surface px-8 py-4 rounded-xl font-bold text-body-md hover:bg-surface-container-low transition-colors"
+            >
+              Explore Modules
+            </button>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="absolute -inset-4 bg-primary-container/5 blur-3xl rounded-full"
+          ></div>
+          <img
+            alt="ITdose Dashboard"
+            class="relative rounded-2xl shadow-2xl border border-white/50 w-full object-cover aspect-video"
+            data-alt="A sophisticated 3D digital healthcare dashboard displayed on a sleek glass tablet, featuring vibrant orange and blue analytics charts. The background is a clean, modern medical facility with soft sunlight filtering through windows. High-quality textures and soft shadows create a premium SaaS aesthetic. The lighting is bright and professional, highlighting the reliability of the software."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjlXzoMKwnIClzeLdojTqP0TGfGo3QUEFkoqLVVnJUqNTpcEYvOxjw0iKQAVVamhrSOTRsCPbUswL6MUivD5lpX2UOYvhCBqGq5XLd7RRzgScb49ja0hIfaxJhduOgh5EvlfrOdG6sfh1iEfxlFdE2NvZPDsGp8M4d9zkGA114KLuymmtkn3GJVPDaRxisjgxfxdsodMK7dpV7MQPBQBXCqKlgKN5QhXZC_J5Pw1rNnHV_xTrPoHnQFYlvYoefF1C8dyy3s8JtC4o"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Local Benefits Bento Grid -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="font-h2 text-h2 text-on-surface">
+            Tailored for the Indian Ecosystem
+          </h2>
+          <p class="text-secondary max-w-2xl mx-auto">
+            We understand the unique operational and regulatory needs of
+            healthcare providers in India.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- GST Ready -->
+          <div
+            class="md:col-span-2 glass-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow border-slate-100 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-6"
+              >
+                <span class="material-symbols-outlined" data-icon="receipt_long"
+                  >receipt_long</span
+                >
+              </div>
+              <h3 class="font-h3 text-h3 mb-3">GST-ready billing</h3>
+              <p class="text-secondary">
+                Fully compliant with Indian tax regulations. Automatic GST
+                calculation for services, pharmacy, and consumables with
+                localized invoice formats.
+              </p>
+            </div>
+            <div class="mt-8">
+              <img
+                alt="GST Billing"
+                class="h-48 w-full object-cover rounded-xl"
+                data-alt="A macro shot of a sleek digital payment terminal and tablet showing a detailed GST invoice. The interface is clean, featuring the ITdose orange accents on a crisp white background. Professional lighting emphasizes the clarity and precision of the software. The scene is modern and business-focused, suggesting financial transparency and compliance."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCRPkBuCeidrQCe8DxPx1Vw--Bwm7BCVQZ1XKmmidCPnGhz0FSN-FE1CoDC5lLqYP2CyfsjZWYhqcV0iPuWWN9wrZpHEayvT7z0tNnuLKSApQGhPfAXGPlk4QBBxxRrMLyK9D2VKnzm4btHLc89erAP37DnzUyUdxZztZd75ecwvN5ui-PN_eE2avVlc9T1CeQVULsqs6Ff0tWcxBvb9cSfz0HnCTJd5GZ8qw9Fs2bJgOu8Pxt_ciTMhJ6UFZS5XqT6N_vXSLjwos"
+              />
+            </div>
+          </div>
+          <!-- Multi-language -->
+          <div
+            class="glass-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow border-slate-100"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-6"
+            >
+              <span class="material-symbols-outlined" data-icon="language"
+                >language</span
+              >
+            </div>
+            <h3 class="font-h3 text-h3 mb-3">Multi-language</h3>
+            <p class="text-secondary">
+              Patient portals and prescriptions available in Hindi, Bengali,
+              Tamil, and other regional languages to improve accessibility.
+            </p>
+          </div>
+          <!-- Compliance -->
+          <div
+            class="glass-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow border-slate-100"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-6"
+            >
+              <span class="material-symbols-outlined" data-icon="verified_user"
+                >verified_user</span
+              >
+            </div>
+            <h3 class="font-h3 text-h3 mb-3">Local compliance</h3>
+            <p class="text-secondary">
+              Adheres to NABH, NABL, and NDHM (ABDM) standards, ensuring your
+              facility meets all national healthcare digital mandates.
+            </p>
+          </div>
+          <!-- Affordable -->
+          <div
+            class="md:col-span-4 glass-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow border-slate-100 flex flex-col md:flex-row items-center gap-12"
+          >
+            <div class="flex-1">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-6"
+              >
+                <span class="material-symbols-outlined" data-icon="savings"
+                  >savings</span
+                >
+              </div>
+              <h3 class="font-h3 text-h3 mb-3">
+                Affordable pricing for all scales
+              </h3>
+              <p class="text-secondary">
+                Flexible subscription and licensing models designed for the
+                Indian market—from small boutique clinics to large
+                multi-specialty hospital chains.
+              </p>
+            </div>
+            <div class="flex-1 flex gap-4">
+              <div
+                class="p-6 rounded-2xl bg-surface-container text-center flex-1"
+              >
+                <div class="text-h2 font-h2 text-primary-container">70%</div>
+                <div class="text-label-caps text-secondary uppercase mt-2">
+                  Cost Reduction
+                </div>
+              </div>
+              <div class="p-6 rounded-2xl bg-slate-900 text-center flex-1">
+                <div class="text-h2 font-h2 text-white">2.4x</div>
+                <div class="text-label-caps text-slate-400 uppercase mt-2">
+                  ROI within 1 Year
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Use Cases Section -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="font-h2 text-h2 text-on-surface">
+            One Platform, Many Possibilities
+          </h2>
+          <p class="text-secondary mt-4">
+            Scalable modules tailored for your specific healthcare entity.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                alt="Hospitals"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A clean, modern hospital hallway with soft overhead lighting and a professional medical environment. Doctors in white coats are walking in the background. The scene is bright and airy, representing high-level care and organized medical infrastructure. The atmosphere is calm and professional, emphasizing the reliability and scale of hospital operations."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlpmBtaZF8iKWVodBWxyPeUmV-oJR38zSG8n-Pg18m4vynophCW8vR8EL3hOz08HMCO89HYGT6dngVui9DnkwUkj7iX3eZ7gP4xMA1-WwRm5eg03xq4avp311_ICKnj0Yqpf4uVY01wP6yF9xukSyHSxSUMWHJnUNfANJdZ-X66kK6hrgnr1GcSo017-bRTJqbycYwPlm7A1kNndTW2wJbf0pCTAloKdqO3w_4mTz1JQSaNEn_Wo3xV1jqqhDh6zuWLIS2gebwWfs"
+              />
+            </div>
+            <div class="p-8">
+              <h4 class="font-h3 text-h3 mb-4">Hospitals</h4>
+              <p class="text-secondary mb-6">
+                Comprehensive IPD/OPD management, OT scheduling, and complex
+                ward management for large-scale operations.
+              </p>
+              <a
+                class="text-primary-container font-bold flex items-center gap-2"
+                href="#"
+                >Learn more
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                ></a
+              >
+            </div>
+          </div>
+          <div
+            class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                alt="Clinics"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A minimalist medical clinic reception area with a warm and inviting atmosphere. The design features light wood accents, soft white walls, and a clean receptionist desk. A tablet with the ITdose software interface is visible on the desk. The mood is welcoming and modern, emphasizing personalized care and technological efficiency in a clinic setting."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC55d3dmma1RcaJJRCaVod8YnvSDbs4hKFtBE3LDLoW0aFBFKRfH2hI0ld2YmjYlaRZ1RSjN8qXR_SIsrndS8T90Qt-a25P0gaBjBLFgzQm2TXXmT9adyfRnSZPC1gB45XbdS9Rkdv28hKETY9g9elsnb10uHM8xJ6GpVO3GoDCncagDLsNb7-J1FZQA3dd6c5OS9WiwPekUteykfmYeerHs7C0Wu83QKMK30y3XXzITPB9y02-1RMR8O6V7Eaz6HBIeJPkAGbjqKQ"
+              />
+            </div>
+            <div class="p-8">
+              <h4 class="font-h3 text-h3 mb-4">Clinics</h4>
+              <p class="text-secondary mb-6">
+                Lightweight appointment booking, digital prescriptions (EMR),
+                and quick patient history lookup for specialized practices.
+              </p>
+              <a
+                class="text-primary-container font-bold flex items-center gap-2"
+                href="#"
+                >Learn more
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                ></a
+              >
+            </div>
+          </div>
+          <div
+            class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                alt="Diagnostic Centers"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="A high-tech diagnostic laboratory with advanced medical testing equipment and pristine white surfaces. Blue and orange accent lighting highlights the sophisticated technology. A professional technician is subtly visible in the background. The overall aesthetic is precise, clean, and highly advanced, suggesting accuracy and rapid data processing."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwld-stgzp_xDHLqTqkqbR10vD5vyNQQWv39PSbIYHL-ER-1vUQJDETq3AiaBOa2zdP5YqEQzZorwvvDz0GukzKufacm8i0IujiFiTU5avK1rzocyPfNIOSfuloOTkbjqdgZl69ix9UMqR8CVzW6FCctwLwYpYmHgY4wnYFg0PCWw3Wr23s1u2VOFiC8hRfm9fv_hgjC6KjemGcldzNUPTdsgp1X8HIbJqJ9RMtT5Jo_5Y3LD33W3deezS-Y_frTlnUG02uIGxl60"
+              />
+            </div>
+            <div class="p-8">
+              <h4 class="font-h3 text-h3 mb-4">Diagnostic Centers</h4>
+              <p class="text-secondary mb-6">
+                LIS integration, barcode-based sample tracking, and automated
+                reporting with digital report delivery to patients.
+              </p>
+              <a
+                class="text-primary-container font-bold flex items-center gap-2"
+                href="#"
+                >Learn more
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Highlight -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
+        >
+          <div class="max-w-xl">
+            <h2 class="font-h2 text-h2 text-on-surface">
+              Powerful Core Features
+            </h2>
+            <p class="text-secondary mt-4">
+              Every module you need to run a high-performance healthcare
+              facility from a single dashboard.
+            </p>
+          </div>
+          <button
+            class="border-2 border-primary-container text-primary-container px-6 py-2 rounded-lg font-bold hover:bg-primary-container/5 transition-colors"
+          >
+            View All 50+ Modules
+          </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="p-8 rounded-3xl bg-surface-container-lowest border border-slate-100 hover:border-primary-container/30 transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-primary-container text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-3xl"
+                data-icon="patient_list"
+                >patient_list</span
+              >
+            </div>
+            <h5 class="font-h3 text-[20px] mb-3">Patient Management</h5>
+            <p class="text-body-sm text-secondary">
+              360-degree patient view, registration, and holistic medical
+              records (EMR).
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-3xl bg-surface-container-lowest border border-slate-100 hover:border-primary-container/30 transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-on-tertiary-container text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-3xl"
+                data-icon="account_balance_wallet"
+                >account_balance_wallet</span
+              >
+            </div>
+            <h5 class="font-h3 text-[20px] mb-3">Smart Billing</h5>
+            <p class="text-body-sm text-secondary">
+              Integrated TPA, corporate billing, and patient self-service
+              payment kiosks.
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-3xl bg-surface-container-lowest border border-slate-100 hover:border-primary-container/30 transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-secondary text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-3xl"
+                data-icon="medication"
+                >medication</span
+              >
+            </div>
+            <h5 class="font-h3 text-[20px] mb-3">Pharmacy</h5>
+            <p class="text-body-sm text-secondary">
+              Inventory tracking, expiry alerts, and direct integration with EMR
+              for e-prescriptions.
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-3xl bg-surface-container-lowest border border-slate-100 hover:border-primary-container/30 transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-tertiary-container text-on-tertiary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-3xl"
+                data-icon="biotech"
+                >biotech</span
+              >
+            </div>
+            <h5 class="font-h3 text-[20px] mb-3">Lab &amp; Radiology</h5>
+            <p class="text-body-sm text-secondary">
+              LIS/RIS integration, machine interfacing, and DICOM image viewing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose ITdose -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-primary-container/10 blur-[120px] rounded-full"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="font-h2 text-h2">Why Choose ITdose in India?</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-4xl mb-6"
+              data-icon="support_agent"
+              >support_agent</span
+            >
+            <h4 class="font-h3 text-h3 mb-4">Fast Local Support</h4>
+            <p class="text-slate-400">
+              On-ground implementation teams and 24/7 technical support based
+              across major Indian cities.
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-4xl mb-6"
+              data-icon="psychology"
+              >psychology</span
+            >
+            <h4 class="font-h3 text-h3 mb-4">Local Expertise</h4>
+            <p class="text-slate-400">
+              Over 15 years of experience in the Indian healthcare market with
+              500+ successful installations.
+            </p>
+          </div>
+          <div
+            class="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-4xl mb-6"
+              data-icon="settings_suggest"
+              >settings_suggest</span
+            >
+            <h4 class="font-h3 text-h3 mb-4">Custom Solutions</h4>
+            <p class="text-slate-400">
+              Modular architecture that can be customized to your specific
+              hospital workflows and growth plans.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="font-h2 text-h2 text-on-surface text-center mb-16">
+          Trusted by Medical Leaders
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="p-10 rounded-3xl bg-surface-container-low relative">
+            <span
+              class="material-symbols-outlined absolute top-8 right-10 text-slate-200 text-6xl"
+              data-icon="format_quote"
+              >format_quote</span
+            >
+            <p class="font-body-lg text-on-surface italic relative z-10 mb-8">
+              "ITdose has completely transformed how we manage our
+              multi-specialty facility. The GST compliance and regional language
+              support made the transition seamless for our staff and patients."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
+                <img
+                  alt="Dr. Rajesh"
+                  class="w-full h-full object-cover"
+                  data-alt="A professional headshot of a mature Indian male doctor wearing a white lab coat and a stethoscope. He has a warm, confident expression and is set against a soft-focus clinical background. The lighting is flattering and professional, conveying authority and trust. This portrait represents a successful medical director and user of the ITdose system."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSHWDQmTrJyrq0TlHQUMsdFC3VyOy7g58szZuWb4Ar7LLYSzqxuAIaTPoZJQap9fuOvl51kzN7nZQS5IQww8B0Ecz18mjm4j2Kn4ncn-f8XqeexmXGK02kmCGLiF4L7q-3wMQ2bJi9BGnF_ZfNThcn1a81_Y1tSHy-90zWO3oB1wYG294TZRxqsy1SXSI1cvZ89nMytZEZeo2V-WlvNUZrTb_uZ75YePdYuC6ci96Uznr9deCSC3mRGO0wSW7nJ6Q_na6D0Oqp8XE"
+                />
+              </div>
+              <div>
+                <div class="font-bold text-on-surface">Dr. Rajesh Kumar</div>
+                <div class="text-secondary text-body-sm">
+                  Director, Delhi Medical Center
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-10 rounded-3xl bg-surface-container-low relative">
+            <span
+              class="material-symbols-outlined absolute top-8 right-10 text-slate-200 text-6xl"
+              data-icon="format_quote"
+              >format_quote</span
+            >
+            <p class="font-body-lg text-on-surface italic relative z-10 mb-8">
+              "The real-time analytics and inventory management have saved us
+              significantly on pharmacy wastage. It’s the most robust ERP we’ve
+              used in our diagnostic chain across Karnataka."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
+                <img
+                  alt="Dr. Meena"
+                  class="w-full h-full object-cover"
+                  data-alt="A professional headshot of an Indian female healthcare executive in business attire. She has a confident, intelligent look and is positioned in a modern office environment. High-key lighting emphasizes her professional demeanor. The image represents the executive leadership that trusts ITdose for large-scale diagnostic operations."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZX-l25_b9lmXmi26TYopmgMOiyakzTGYsuSBbUrv-Lp1D6j2PhoRaf4Je44nnUmM0I4pC3Klv8PfL-YaQxpmKpj7pOIOHkuPQ4gXXZX2An7djz6PVrW3lb9JUWK_EVymYmLmNZlC-vpyTiRg9cJ6KM_TcPIDH9-6TSgLPMgEMBclXIvcmBJJPgXigHCUgRgVF6CBHPJlhJtUSsGSGf6PQG3-y4m1UCbUq72-U7xFmM_dsiKJLc_GHj_qs7iMfMUddWmmt3sQ7K4g"
+                />
+              </div>
+              <div>
+                <div class="font-bold text-on-surface">Dr. Meena Iyer</div>
+                <div class="text-secondary text-body-sm">
+                  Managing Director, LifeScan Diagnostics
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Final CTA Section -->
+    <section class="py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div
+          class="primary-gradient p-12 md:p-16 rounded-[40px] text-white text-center shadow-2xl shadow-primary-container/40 relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2"
+          ></div>
+          <div class="relative z-10">
+            <h2 class="font-h1 text-h2 md:text-h1 mb-6">
+              Start your digital transformation today
+            </h2>
+            <p class="text-body-lg opacity-90 mb-10 max-w-2xl mx-auto">
+              Join 500+ Indian healthcare providers who are delivering better
+              care with ITdose ERP.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                class="bg-white text-primary-container px-10 py-4 rounded-xl font-bold text-body-md shadow-lg hover:bg-slate-50 transition-colors"
+              >
+                Book Demo Now
+              </button>
+              <button
+                class="bg-primary/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold text-body-md hover:bg-primary/30 transition-colors"
+              >
+                Speak to an Expert
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Logo -->
+        <div>
+          <div class="text-xl font-bold text-white mb-6">ITdose</div>
+          <p class="text-sm mb-6">
+            Leading provider of intelligent hospital management systems.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="blogPage.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold text-white mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="bloginsight.html">Blog Insights</a></li>
+            <li><a href="country.html">Country</a></li>
+            <li><a href="popupform.html">Demo Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 text-xs">© 2024 ITdose Hospital ERP</div>
+    </footer>
+  </body>
+</html>
